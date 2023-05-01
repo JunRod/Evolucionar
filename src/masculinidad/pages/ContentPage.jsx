@@ -1,0 +1,406 @@
+import { useMemo } from "react";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Toaster } from "sonner";
+import styled, { css } from "styled-components";
+import {
+  setDataSlice,
+  setDataVisualization,
+  setScroll,
+} from "../../store/masculinidad";
+import { useEffect } from "react";
+
+const Contenedor = styled.div`
+  background-color: ${(props) => props.theme.primario};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 11vh 10vh 10vh 10vh;
+  height: 100%;
+
+  height: ${(props) => {
+    if (props.displaySearch) {
+      return props.dataFilter.length === 0 ? "100vh" : "100%";
+    } else {
+      return "100%";
+    }
+  }};
+`;
+
+const MessageDataSliceEmpty = styled.div`
+  padding: 2vh;
+  color: ${(props) => props.theme.secundario};
+  font-size: 2.8vh;
+  text-align: center;
+`;
+
+const Button = styled(NavLink)`
+  cursor: pointer;
+  width: 8vh;
+  height: 5vh;
+  background-color: transparent;
+  border: 0.5vh solid ${(props) => props.theme.secundario};
+  font-family: ${(props) => props.theme.fontRegular};
+  font-weight: ${(props) => props.theme.weightRegular};
+  font-style: ${(props) => props.theme.styleRegular};
+  background-color: ${(props) => props.theme.primario};
+  font-size: 2.6vh;
+  text-align: center;
+  color: ${(props) => props.theme.secundario};
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: ${(props) => props.theme.secundario};
+    color: ${(props) => props.theme.primario};
+  }
+
+  &.active {
+    background-color: ${(props) => props.theme.secundario};
+    color: ${(props) => props.theme.primario};
+  }
+`;
+
+const ContentView = styled.div`
+  position: relative;
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+`;
+
+const ContentViewDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-size: 80vh 130vh;
+  z-index: 5;
+  position: relative;
+  width: 40%;
+  height: 100%;
+  order: 0;
+  color: ${(props) => props.theme.secundario};
+  font-size: 3vh;
+  padding: 5vh 8vh 0 0;
+  font-family: ${(props) => props.theme.fontRegular};
+  font-weight: ${(props) => props.theme.weightRegular};
+  font-style: ${(props) => props.theme.styleRegular};
+`;
+
+const Placa = styled.i`
+  border-radius: 1vh;
+  padding: 1.2vh 1.8vh;
+  font-size: 2.2vh;
+  
+  ${(props) =>
+    props.section === "libros"
+      ? css`
+          background: ${props.theme[props.section]};
+          color: ${props.theme.primario};
+        `
+      : css`
+          background: ${props.theme[props.section]};
+        `};
+`;
+
+const Title = styled.div`
+  margin-top: 1vh;
+  font-size: 5.5vh;
+  font-family: ${(props) => props.theme.fontBoldItalic};
+  font-weight: ${(props) => props.theme.weightBoldItalic};
+  font-style: normal;
+`;
+
+const Description = styled.div`
+  font-size: 2.5vh;
+  height: 23vh;
+  text-overflow: ellipsis;
+  overflow: hidden;
+`;
+
+const ContainerFrontPage = styled.div`
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 80%;
+  order: 2;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    box-shadow: inset 9vh -11vh 14vh 8vh ${(props) => props.theme.primario},
+      inset 9vh -11vh 10vh -4vh ${(props) => props.theme.primario};
+  }
+`;
+
+const Img = styled.img`
+  border-radius: 0 1vh 0 0;
+  height: 100%;
+  width: 100%;
+`;
+
+const GridBooks = styled.div`
+  position: relative;
+  top: -8vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  gap: 3vh;
+  z-index: 90;
+`;
+
+const CardContainer = styled.div`
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  position: relative;
+
+  :before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-top: solid 1vh ${(props) => props.theme.secundario};
+    border-bottom: solid 1vh ${(props) => props.theme.secundario};
+    transition: 0.2s;
+    transform: scaleX(0);
+  }
+
+  :after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-left: solid 1vh ${(props) => props.theme.secundario};
+    border-right: solid 1vh ${(props) => props.theme.secundario};
+    transition: 0.2s;
+    transform: scaleY(0);
+  }
+
+  :hover:before,
+  :hover:after {
+    transform: scale(1);
+  }
+`;
+
+const Card = styled.div`
+  padding: 1vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+`;
+
+const CardImagen = styled.div`
+  height: 30vh;
+  width: 100%;
+  padding: 2vh 2vh 0 2vh;
+`;
+
+const CardImg = styled.img`
+  border-radius: 1vh 1vh 0 0;
+  height: 100%;
+  width: 100%;
+`;
+
+const CardTitle = styled.div`
+  font-family: ${(props) => props.theme.fontMediumItalic};
+  font-weight: ${(props) => props.theme.weightMediumItalic};
+  font-style: ${(props) => props.theme.styleMediumItalic};
+  text-align: center;
+  font-size: 3vh;
+  color: ${(props) => props.theme.secundario};
+  letter-spacing: 0.1vh;
+`;
+
+const CardDescription = styled.div`
+  font-size: 2.3vh;
+  font-family: ${(props) => props.theme.fontRegular};
+  font-weight: ${(props) => props.theme.weightRegular};
+  font-style: ${(props) => props.theme.styleRegular};
+  color: ${(props) => props.theme.secundario};
+  padding: 0 2vh 2vh 2vh;
+  height: 17vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+const ContenedorPlacas = styled.div`
+  color: white !important;
+  font-family: ${(props) => props.theme.fontMediumItalic};
+  font-weight: ${(props) => props.theme.weightBoldItalic};
+  font-style: ${(props) => props.theme.styleMediumItalic};
+  padding-bottom: 2vh;
+  ${(props) => {
+    if (props.descripcion)
+      return css`
+        display: flex;
+      `;
+  }}
+`;
+
+const VerMas = styled.div`
+  font-size: 2.3vh;
+  font-family: ${(props) => props.theme.fontRegular};
+  font-weight: ${(props) => props.theme.weightRegular};
+  font-style: ${(props) => props.theme.styleRegular};
+  color: ${(props) => props.theme.secundario};
+  padding: 0vh 2vh 1vh 2vh;
+`;
+
+const Pagination = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5vh;
+  align-items: center;
+`;
+
+export const ContentPage = () => {
+  const dispatch = useDispatch();
+
+  const {
+    dataFilter,
+    dataVisualization,
+    data,
+    dataSlice,
+    MessageAfterClickOnSearch,
+    displaySearch,
+    sectionCurrent,
+    scroll,
+  } = useSelector((state) => state.masculinidad);
+
+  const { section, busquedad = "" } = useParams();
+
+  useEffect(() => {
+    const variable = scroll === "view-content" && "#view-content";
+
+    if (variable === false || variable === "") return;
+
+    document.querySelector(variable).scrollIntoView({ behavior: "smooth" });
+
+    dispatch(setScroll(""));
+  }, [scroll, dataVisualization]);
+
+  let corte_one = 0;
+  let corte_two = 0;
+
+  const CortarContenido = (index, index_two) => {
+    var variant =
+      dataFilter.length > 0 ? dataFilter : data[sectionCurrent || section];
+
+    const numeroInfoCortador = 12;
+
+    corte_one = index * numeroInfoCortador;
+    corte_two = index_two * numeroInfoCortador;
+
+    if (corte_two > variant.length) corte_two = variant.length;
+
+    dispatch(setDataSlice(variant.slice(corte_one, corte_two)));
+  };
+
+  const Buttons = () => {
+    const buttons = [];
+    const variant =
+      dataFilter.length > 0
+        ? dataFilter
+        : data[sectionCurrent || section] || [];
+
+    if (busquedad.length < 1 && section === undefined) return [];
+
+    for (let index = 0; index < Math.ceil(variant.length / 12); index++) {
+      const newButton = (
+        <Button
+          key={index}
+          onClick={() => CortarContenido(index, index + 1)}
+          to={`/${busquedad ? `buscar/${busquedad}` : section}/${index + 1}`}
+        >
+          {index + 1}
+        </Button>
+      );
+      buttons.push(newButton);
+    }
+
+    return buttons;
+  };
+
+  const onClickCardContainer = (...object) => {
+    dispatch(setDataVisualization(...object));
+    dispatch(setScroll("view-content"));
+  };
+
+  let wordSeccionTransform = (seccion) => seccion.toLowerCase();
+
+  return (
+    <Contenedor dataFilter={dataFilter} displaySearch={displaySearch}>
+      <Toaster richColors theme="dark" />
+      {dataVisualization.image && (
+        <ContentView
+          id="view-content"
+          className="
+              animate__animated 
+              animate__fadeInDown
+          "
+        >
+          <ContentViewDescription>
+            <ContenedorPlacas>
+              <Placa section={wordSeccionTransform(dataVisualization.seccion)}>
+                {dataVisualization.seccion}
+              </Placa>
+            </ContenedorPlacas>
+            <Title>{dataVisualization.title}</Title>
+
+            <Description>{dataVisualization.descripcion}</Description>
+          </ContentViewDescription>
+          <ContainerFrontPage>
+            <Img src={dataVisualization.image} />
+          </ContainerFrontPage>
+        </ContentView>
+      )}
+
+      {MessageAfterClickOnSearch.length > 0 && (
+        <MessageDataSliceEmpty>
+          {MessageAfterClickOnSearch}
+        </MessageDataSliceEmpty>
+      )}
+      <GridBooks style={{ marginTop: !dataVisualization.image && "8vh" }}>
+        {dataSlice?.map(({ image, descripcion, title, seccion }, index) => {
+          return (
+            <CardContainer
+              key={index}
+              id={`card${index}`}
+              onClick={() =>
+                onClickCardContainer({ image, descripcion, title, seccion })
+              }
+            >
+              <Card>
+                <CardImagen>
+                  <CardImg src={image} alt={title} />
+                </CardImagen>
+
+                <CardTitle>{title}</CardTitle>
+
+                <CardDescription>{descripcion}</CardDescription>
+                <VerMas>Ver más...</VerMas>
+                {dataFilter.length > 0 && (
+                  <ContenedorPlacas>
+                    <Placa section={wordSeccionTransform(seccion)}>
+                      {seccion}
+                    </Placa>
+                  </ContenedorPlacas>
+                )}
+              </Card>
+            </CardContainer>
+          );
+        })}
+      </GridBooks>
+
+      <Pagination>{Buttons()}</Pagination>
+    </Contenedor>
+  );
+};
