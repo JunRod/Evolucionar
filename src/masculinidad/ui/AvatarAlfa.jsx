@@ -30,7 +30,7 @@ const GradientAvatar = styled.div`
       #394655 80%,
       transparent 95%
     );
-    -webkit-mask: url(AvatarImg);
+    -webkit-mask: url("/images/Avatar.png");
     -webkit-mask-size: 123.5vh 102vh;
 `
 
