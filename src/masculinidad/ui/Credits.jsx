@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Twitter from "../../../public/img/Twitter.svg";
-import Linkedin from "../../../public/img/Linkedin.svg";
+import Twitter from "/images/Twitter.svg";
+import Linkedin from "/images/Linkedin.svg";
 import { Link } from "react-router-dom";
 
 const CreditsContainer = styled.div`

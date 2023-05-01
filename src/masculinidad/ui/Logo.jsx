@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import styled, { css } from "styled-components";
 import { setIsHoverLogo } from "../../store/masculinidad";
 
-
 const LogoContainer = styled.div`
   z-index: ${(props) => (props.isHoverLogo ? 2 : 9)};
   position: relative;
@@ -59,7 +58,7 @@ const Line = styled.div`
   width: 100vh;
   border-radius: 60%;
   transform: rotate(-20deg);
-  -webkit-mask-image: url("../../../public/img/mask.svg");
+  -webkit-mask-image: url("/images/mask.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 117vh 98vh;
   -webkit-mask-position: 23vh -50vh;

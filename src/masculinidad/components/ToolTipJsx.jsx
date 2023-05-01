@@ -1,7 +1,7 @@
 import { Tooltip } from "react-tooltip"
 import { Link } from "react-router-dom";
-import Twitter from "../../../public/img/Twitter.svg";
-import Linkedin from "../../../public/img/Linkedin.svg";
+import Twitter from "/images/Twitter.svg";
+import Linkedin from "/images/Linkedin.svg";
 import styled from "styled-components";
 
 const Toltip = styled(Tooltip)`
