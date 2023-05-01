@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components"
 import Vector2 from "/images//VectorEyes2.svg"
 import Vector3 from "/images/Circle2.svg"
-import AvatarImg from "/images/Avatar.png"
-
 
 const Avatar = styled.img`
     z-index: 10;
@@ -341,7 +339,7 @@ export const AvatarAlfa = () => {
             <GradientAvatar />
 
             <Avatar
-                src={AvatarImg}
+                src={"/images/Avatar.png"}
             />
         </AvatarContainer>
     )
