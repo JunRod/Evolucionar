@@ -1,6 +1,8 @@
-import Vector2 from "../../../public/assets/VectorEyes2.svg"
-import Vector3 from "../../../public/assets/Circle2.svg"
 import styled, { css } from "styled-components"
+import Vector2 from "../../../public/img/VectorEyes2.svg"
+import Vector3 from "../../../public/img/Circle2.svg"
+import AvatarImg from "../../../public/img/Avatar.png"
+
 
 const Avatar = styled.img`
     z-index: 10;
@@ -28,7 +30,7 @@ const GradientAvatar = styled.div`
       #394655 80%,
       transparent 95%
     );
-    -webkit-mask: url(../public/assets/Avatar.png);
+    -webkit-mask: url(AvatarImg);
     -webkit-mask-size: 123.5vh 102vh;
 `
 
@@ -339,7 +341,7 @@ export const AvatarAlfa = () => {
             <GradientAvatar />
 
             <Avatar
-                src="../../../public/assets/Avatar.png"
+                src={AvatarImg}
             />
         </AvatarContainer>
     )

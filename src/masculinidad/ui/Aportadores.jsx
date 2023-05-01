@@ -156,7 +156,8 @@ export const Aportadores = () => {
                     <MarcadorOne>2 °</MarcadorOne>
                     <ContainerImgOne >
                         <ImageOne
-                            src="../../../public/assets/photo2.jpg" alt="photo1.jpg"
+                            src="../../../public/img/photo2.jpg" 
+                            alt="photo2.jpg"
                         />
                     </ContainerImgOne>
                     <DescripcionOne >
@@ -176,7 +177,7 @@ export const Aportadores = () => {
                     <ContainerImagenTwo>
                         <ImagenTwo
                             className="image_one"
-                            src="../../../public/assets/photo1.jpg" alt="photo1.jpg"
+                            src="../../../public/img/photo1.jpg" alt="photo1.jpg"
                         />
                     </ContainerImagenTwo>
                     <DescripcionOne>
@@ -195,7 +196,7 @@ export const Aportadores = () => {
                     <MarcadorThree>3 °</MarcadorThree>
                     <ContainerImgThree>
                         <ImageThree 
-                        src="../../../public/assets/photo3.jpg" alt="photo1.jpg"
+                        src="../../../public/img/photo3.jpg" alt="photo1.jpg"
                          />
                     </ContainerImgThree>
 

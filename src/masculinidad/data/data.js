@@ -2,84 +2,84 @@ export const dataBackend = {
   youtube: [
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "YouTube",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
@@ -88,84 +88,84 @@ export const dataBackend = {
   twitter: [
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Twitter",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
@@ -174,84 +174,84 @@ export const dataBackend = {
   tiktok: [
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "TikTok",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
@@ -260,84 +260,84 @@ export const dataBackend = {
   telegram: [
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Telegram",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
@@ -346,84 +346,84 @@ export const dataBackend = {
   discord: [
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Discord",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
@@ -432,168 +432,168 @@ export const dataBackend = {
   libros: [
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/temach.jpg",
+      image: "../../../public/img/temach.jpg",
       title: "El Temach",
       descripcion:
         "En  este canal aprendemos todo sobre el juego de las relaciones personales; mejoramos en nosotros mismos; hacemos música y chingos de compas.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
     },
     {
       seccion: "Libros",
-      image: "../../../public/assets/images/alejandroPeterson.webp",
+      image: "../../../public/img/alejandroPeterson.webp",
       title: "Alejandro Peterson",
       descripcion:
         "Desarrollo personal, masculinidad, comprensión de la mujer, mejorando la calidad de las relaciones, autoestima.",
