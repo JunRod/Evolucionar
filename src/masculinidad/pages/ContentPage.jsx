@@ -11,6 +11,8 @@ import {
 import { useEffect } from "react";
 import { devices } from "../global/valores";
 
+
+
 const Contenedor = styled.div`
   background-color: ${(props) => props.theme.primario};
   display: flex;
@@ -225,6 +227,7 @@ const GridBooks = styled.div`
   @media ${devices.mobileS} {
     grid-template-columns: repeat(1, 1fr);
     display: grid;
+    padding: ${props => props.displaySearch ? "80px 0 0 0 !important" : "0"};
   }
   
   @media ${devices.tablet} {
@@ -233,6 +236,7 @@ const GridBooks = styled.div`
 
   @media ${devices.laptop} {
     grid-template-columns: repeat(4, 1fr);
+    padding: 0 !important;
   }
 
 `;
@@ -282,6 +286,39 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1vh;
+  justify-content: center;
+  align-items: center;
+
+  :hover::before {
+    display: flex !important;
+  }
+
+  ::before {
+    z-index: 90;
+    display: none;
+    content: "";
+    position: absolute;
+    backdrop-filter: blur(4px);
+    height: 97%;
+    width: 95%;
+  }
+
+  :hover::after {
+    display: flex !important;
+  }
+
+  ::after {
+    display: none;
+    content: "";
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    background-image: url("../../../public/images/view.png");
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    background-position: center;
+    position: absolute;
+  }
 
   @media ${devices.mobileS} {
     flex-direction: row;
@@ -299,31 +336,13 @@ const CardImagen = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  @media ${devices.mobileS} {
-   padding: 2px;
-  }
-
-  @media ${devices.tablet} {
-    padding: 10px 10px 0 10px;
-  }
 `;
 
 const CardImg = styled.img`
-  border-radius: 1vh 1vh 0 0;
+  border-radius: 10px;
   height: 100%;
   width: 100%;
 
-  @media ${devices.mobileS} {
-  border-radius: 1vh;
-      height: 70%;
-    width: 100%;
-  }
-  
-  @media ${devices.tablet} {
-      height: 100%;
-      width: 100%;
-  }
 `;
 
 const CardTitle = styled.div`
@@ -342,7 +361,6 @@ const CardDescription = styled.div`
   font-weight: ${(props) => props.theme.weightRegular};
   font-style: ${(props) => props.theme.styleRegular};
   color: ${(props) => props.theme.secundario};
-  padding: 0 2vh 2vh 2vh;
   height: 17vh;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -497,7 +515,8 @@ export const ContentPage = () => {
           {MessageAfterClickOnSearch}
         </MessageDataSliceEmpty>
       )}
-      <GridBooks style={{ marginTop: !dataVisualization.image && "8vh" }}>
+
+      <GridBooks displaySearch={displaySearch} style={{ marginTop: !dataVisualization.image && "8vh" }}>
         {dataSlice?.map(({ image, descripcion, title, seccion }, index) => {
           return (
             <CardContainer

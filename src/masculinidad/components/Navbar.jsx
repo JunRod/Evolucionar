@@ -18,7 +18,7 @@ const Nav = styled.div`
   padding: 1vh 4vh;
   margin: 1vh;
   border-radius: 1vh;
-  font-size: 2.3vh;
+  font-size: 2.1vh;
   width: 99%;
 
   background-image: linear-gradient(
@@ -38,26 +38,37 @@ const Nav = styled.div`
   @media ${devices.mobileS} {
     padding: 1vh 1vh;
     width: 97%;
+
+    /* Cuando sea mobileS y displaySearch esta activo entonces el contenedo genedor Nav
+        se pondra en modo columna
+    */
+    flex-wrap: wrap !important;
+
   }
 
   @media ${devices.tablet} {
     padding: 1vh 3vh;
     width: 99%;
+  }
 
+  @media ${devices.laptop} {
+    flex-direction: row !important;
+  }
 
-
+  @media ${devices.laptopL} {
+  font-size: 16px;
   }
 `;
 
 
 
 const ContainerSections = styled.div`
-  gap: 1vh;
+  gap: 2px;
   list-style: none;
   padding: 0;
   margin: 0;
   color: ${(props) => props.theme.secundario};
-  letter-spacing: 0.4vh;
+  letter-spacing: 2px;
   z-index: 20;
   justify-content: center;
   text-transform: uppercase;
@@ -80,7 +91,7 @@ const ContainerSections = styled.div`
     text-decoration: none;
     justify-content: center;
     align-items: center;
-    padding: 1.2vh 1.2vh;
+    padding: 8px 8px;
   }
 
   a:hover::after {
@@ -91,27 +102,40 @@ const ContainerSections = styled.div`
       ${(props) => props.theme.secundario} 20%,
       transparent 100%
     );
-    top: 5vh;
-    border-radius: 0.7vh;
-    animation: barrita 0.3s ease-in-out;
+    top: 30px;
+    left: 10px;
+    border-radius: 20px;
+    animation: barrita 0.2s ease-in-out;
     animation-fill-mode: forwards;
+
+  @media ${devices.mobileS} {
+    top: 35px;
+    left: 20px;
+  }
+
+  @media ${devices.tablet} {
+    top: 30px;
+    left: 10px;
+  }
+
   }
 
   @keyframes barrita {
     0% {
-      height: 10%;
+      height: 0px;
       width: 0%;
     }
     100% {
-      height: 10%;
-      width: 90%;
+      height: 4px;
+      width: 80px;
     }
   }
 
   a.on::before {
-    border-radius: 0.7vh;
+    border-radius: 7px;
     position: absolute;
-    left: 0vh;
+    top: -2px;
+    left: 0px;
     content: "";
     height: 100%;
     width: 100%;
@@ -119,20 +143,22 @@ const ContainerSections = styled.div`
     mix-blend-mode: difference;
   }
 
-  @media ${devices.mobileS} {
+  @media ${devices.mobileS || devices.mobileM || devices.mobileL } {
     display: none !important;
   }
 
-  @media ${devices.tablet} {
-    display: flex !important;
+  @media ${devices.laptop} {
+    display: ${props => props.displaySearch ? "none": "flex"} !important;
   }
+
+
 
 `;
 
 const ContainerSectionsMenu = styled(ContainerSections)`
 
   .bm-burger-button {
-    height: 10px !important;
+    height: 12px !important;
     width: 15px !important;
   }
 
@@ -144,6 +170,12 @@ const ContainerSectionsMenu = styled(ContainerSections)`
     display: none !important;
   }
 
+    a:nth-last-child(2) {
+    margin-top: 20px;
+    margin-left: 0;
+
+  }
+
 `
 
 const SectionTwo = styled.div`
@@ -153,7 +185,6 @@ const SectionTwo = styled.div`
   align-items: center;
   gap: 3vh;
   margin: 0;
-
   
   @media ${devices.mobileS} {
     gap: 1.5vh;
@@ -163,6 +194,7 @@ const SectionTwo = styled.div`
     gap: 3vh;
   }
 `;
+
 
 const Name = styled.div`
   font-family: ${(props) => props.theme.fontMediumItalic};
@@ -180,7 +212,20 @@ const Name = styled.div`
     font-size: 2.6vh;
   }
 
+  @media ${devices.mobileS} {
+    display: none !important;
+  }
+
+  @media ${devices.tablet} {
+    display: flex !important;
+  }
+
+  @media ${devices.laptopL} {
+  font-size:20px;
+  }
+
 `;
+
 
 const Photo = styled.div`
   background-image: linear-gradient(
@@ -202,7 +247,38 @@ const Photo = styled.div`
     height: 6vh;
   }
 
+  @media ${devices.laptopL} {
+    width:40px;
+    height: 40px;
+  }
+
 `;
+
+const DisplaySmall = styled.div`
+
+  @media ${devices.mobileS || devices.mobileM || devices.mobileL} {
+    width: 100%;
+    margin-top: ${(props) => props.
+    displaySearch ? "20px" : "0"} ;
+    z-index: 2;
+    div {
+      display: ${(props) => props.displaySearch ? "flex" : "none"} !important;
+      gap: 10px;
+
+      a {
+        font-size: 20px;
+      }
+
+      div {
+        width: 100%;
+      }
+    }
+  }
+
+  @media ${devices.laptop} {
+    display: none !important;
+  }
+`
 
 export const Navbar = () => {
   const [SectionsLeft, SectionsRight, Logo, Buscador] = GeneratorsNav();
@@ -210,13 +286,13 @@ export const Navbar = () => {
   const { displaySearch } = useSelector((state) => state.masculinidad);
 
   return (
-    <Nav>
+    <Nav >
       <Logo />
-      <Buscador />
+      <Buscador/>
 
-      <ContainerSections style={{ display: displaySearch ? "none" : "flex" }} >
-        <SectionsRight />
+      <ContainerSections displaySearch={displaySearch} >
         <SectionsLeft />
+        <SectionsRight />
       </ContainerSections>
 
       <SectionTwo>
@@ -224,16 +300,20 @@ export const Navbar = () => {
         <Name id="tooltip" data-tooltip-delay-hide={10000}>Usuario</Name>
         <Photo id="tooltip" data-tooltip-delay-hide={10000}/>
 
-        <ContainerSectionsMenu >
+        <ContainerSectionsMenu>
           <Menu width={200} right styles={styles}>
             {SectionsLeft()}
             {SectionsRight()}
           </Menu>
         </ContainerSectionsMenu>
-  
-
       </SectionTwo>
 
+      <DisplaySmall displaySearch={displaySearch}>
+        <Buscador/>
+      </DisplaySmall>
     </Nav>
   );
 };
+
+
+//Foto y escripcion tiene mucho padding

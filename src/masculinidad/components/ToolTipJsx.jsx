@@ -56,7 +56,7 @@ const ContainerTwitter = styled(Link)`
       padding: 0px;
     }
     @media ${devices.tablet} {
-    padding: 1vh;
+      padding: 1vh;
     }
   }
 

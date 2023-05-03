@@ -2,7 +2,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import { MasculinidadPage } from "../pages/MasculinidadPage";
 import { ContentPage } from "../pages/ContentPage";
 import { Navbar } from "../components/Navbar";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../global/valores";
 
 export const routesMasculinidad = [
@@ -31,8 +31,6 @@ export const routesMasculinidad = [
     element: <Navigate to="/" />,
   },
 ];
-
-
 
 // const Input = styled.input`
 //   position: fixed;
@@ -99,8 +97,10 @@ export const MasculidadRoutes = () => {
         value={scrollbarValue}
         onInput={handleScrollbarMouseUp}
       /> */}
+
       <Navbar />
+
       <Outlet />
-      </ThemeProvider>
+    </ThemeProvider>
   );
 };

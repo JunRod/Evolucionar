@@ -1,317 +1,317 @@
+import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
+import { toast } from "sonner";
 import {
-    useRef
-} from 'react'
-import {
-    useDispatch,
-    useSelector
-} from 'react-redux'
-import {
-    Link,
-    NavLink,
-    useNavigate,
-    useParams
-} from 'react-router-dom'
-import {
-    toast
-} from 'sonner'
-import {
-    setDataFilter,
-    setDataSlice,
-    setDataVisualization,
-    setMessageAfterClickOnSearch,
-    setScroll,
-    setSectionCurrent,
-    setdisplaySearch
-} from '../../store/masculinidad'
-import styled from 'styled-components'
-import { useEffect } from 'react'
-import { devices } from '../global/valores'
+  setDataFilter,
+  setDataSlice,
+  setDataVisualization,
+  setMessageAfterClickOnSearch,
+  setScroll,
+  setSectionCurrent,
+  setdisplaySearch,
+} from "../../store/masculinidad";
+import styled from "styled-components";
+import { useEffect } from "react";
+import { devices } from "../global/valores";
 
-const sections = ['libros', 'youtube', 'twitter', 'tiktok', 'telegram', 'discord']
+const sections = [
+  "libros",
+  "youtube",
+  "twitter",
+  "tiktok",
+  "telegram",
+  "discord",
+];
 
 const ContainerSearch = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 3vh;
-`
+  display: flex;
+  align-items: center;
+  gap: 3vh;
+
+  @media ${devices.mobileS || devices.mobileM || devices.mobileL} {
+    display: none !important;
+  }
+
+  @media ${devices.laptop} {
+    display: ${(props) => props.displaySearch ? "flex" : "none"} !important;
+  }
+`;
+
+// const BuscadorInWindowsSmall = styled(ContainerSearch)`
+//   @media ${devices.mobileS || devices.mobileM || devices.mobileL} { 
+//    /* display: ${(props) => props.displaySearch ? "flex" : "none"} !important; */
+//    ${props => console.log(props)}
+//   }
+  
+//    @media ${devices.laptop} {
+//     /* display: none !important;  */
+//    } 
+// `;
 
 const ButtonReturn = styled(Link)`
-    text-decoration: none;
-    cursor: pointer;
-    z-index: 90;
-    padding: 0.3vh 2vh;
-    font-family: ${props => props.theme.fontRegular};
-    font-weight: ${props => props.theme.weightRegular};
-    font-style: ${props => props.theme.styleRegular};
-    color: ${props => props.theme.secundario};
-    font-size: 2.8vh;
-    border: 0.5vh solid ${props => props.theme.secundario};
-    border-radius: 1vh;
-    transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 90;
+  padding: 4px 8px;
+  font-family: ${(props) => props.theme.fontRegular};
+  font-weight: ${(props) => props.theme.weightRegular};
+  font-style: ${(props) => props.theme.styleRegular};
+  color: ${(props) => props.theme.secundario};
+  font-size: 24px;
+  border: 0.5vh solid ${(props) => props.theme.secundario};
+  border-radius: 1vh;
+  transition: all 0.3s ease-in-out;
 
-    &:hover {
-    color: ${props => props.theme.primario};
-    background-color: ${props => props.theme.secundario};
+  &:hover {
+    color: ${(props) => props.theme.primario};
+    background-color: ${(props) => props.theme.secundario};
   }
-`
+`;
 
 const ContainerInput = styled.div`
-    z-index: 300;
-    border-radius: 1vh;
-    gap: 1vh;
-    width: 80vh;
-    border: 0.5vh solid ${props => props.theme.secundario};
-    display: flex;
-    flex-direction: row;
-`
+  z-index: 300;
+  border-radius: 1vh;
+  gap: 1vh;
+  width: 80vh;
+  border: 0.5vh solid ${(props) => props.theme.secundario};
+  display: flex;
+  flex-direction: row;
+`;
 
 const Input = styled.input`
-    order: 2;
-    border: 0;
-    border-radius: 0;
-    padding: 0;
-    width: 100%;
-    font-family: ${props => props.theme.fontRegular};
-    font-weight: ${props => props.theme.weightRegular};
-    font-style: ${props => props.theme.styleRegular};
-    color: ${props => props.theme.secundario};
-    background-color: transparent;
-    font-size: 2.8vh;
+  order: 2;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+  font-family: ${(props) => props.theme.fontRegular};
+  font-weight: ${(props) => props.theme.weightRegular};
+  font-style: ${(props) => props.theme.styleRegular};
+  color: ${(props) => props.theme.secundario};
+  background-color: transparent;
+  font-size: 2.8vh;
 
-    &:focus {
+  &:focus {
     border: 0;
     outline: 0;
   }
 
   &::placeholder {
-    color: ${props => props.theme.secundario};
+    color: ${(props) => props.theme.secundario};
     font-size: 2.8vh;
   }
-`
+`;
 
 const Icon = styled.svg`
-    cursor: pointer;
-    padding: 0.8vh 1.5vh;
-    order: 0;
-    height: 5vh;
-    color: ${props => props.theme.secundario};
-    transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  padding: 0.8vh 1.5vh;
+  order: 0;
+  height: 5vh;
+  color: ${(props) => props.theme.secundario};
+  transition: all 0.2s ease-in-out;
 
-    &:hover {
-    background-color: ${props => props.theme.secundario};
-    color: ${props => props.theme.primario};
+  &:hover {
+    background-color: ${(props) => props.theme.secundario};
+    color: ${(props) => props.theme.primario};
   }
-`
+`;
 
 const LogoNavbar = styled(Link)`
-    text-decoration: none;
-    position: relative;
-    height: 100%;
-    width: 20vh;
-
-
-
-    
-`
+  text-decoration: none;
+  position: relative;
+  height: 100%;
+  width: 20vh;
+`;
 
 const Title = styled.div`
-    cursor: pointer;
-    font-family: ${props => props.theme.fontBoldItalic};
-    font-weight: ${props => props.theme.weightBoldItalic};
-    font-style: ${props => props.theme.styleBoldItalic};
-    font-size: 3vh;
-    letter-spacing: 0.2vh;
-    color: ${props => props.theme.secundario};
+  cursor: pointer;
+  font-family: ${(props) => props.theme.fontBoldItalic};
+  font-weight: ${(props) => props.theme.weightBoldItalic};
+  font-style: ${(props) => props.theme.styleBoldItalic};
+  font-size: 3vh;
+  letter-spacing: 0.2vh;
+  color: ${(props) => props.theme.secundario};
 
-    @media ${devices.mobileS} {
-        font-size: 2vh;
-
+  @media ${devices.mobileS} {
+    font-size: 2vh;
   }
-
   @media ${devices.tablet} {
     font-size: 3vh;
-
   }
 
-
-`
+  @media ${devices.laptopL} {
+    font-size: 20px;
+  }
+`;
 
 export const GeneratorsNav = () => {
 
-    //Buscador | SectionsRight
-    const inputBuscar = useRef()
+  //Buscador | SectionsRight
+  const inputBuscar = useRef();
 
-    const Buscador = () => {
-        const dispatch = useDispatch()
-        const navigate = useNavigate()
-        const { data, displaySearch } = useSelector(state => state.masculinidad)
+  const Buscador = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { data, displaySearch } = useSelector((state) => state.masculinidad);
 
-        const onSearch = async () => {
+    const onSearch = async () => {
+      dispatch(setDataVisualization({}));
 
-            dispatch(setDataVisualization({}))
+      const value = inputBuscar.current.value.toLowerCase();
 
-            const value = inputBuscar.current.value.toLowerCase()
+      if (value.length < 1) {
+        toast.error("Debe rellenar el campo.");
+        return;
+      }
 
-            if (value.length < 1) {
-                toast.error('Debe rellenar el campo.')
-                return
-            }
+      let filtrado = [];
 
-            let filtrado = []
+      for (const key in data) {
+        const filter = data[key].filter(
+          ({ title, descripcion }) =>
+            title.toLowerCase().includes(value) ||
+            descripcion.toLowerCase().includes(value)
+        );
 
-            for (const key in data) {
-                const filter = data[key].filter(({ title, descripcion }) => (title.toLowerCase().includes(value) || descripcion.toLowerCase().includes(value)))
+        filtrado.push(...filter);
+      }
 
-                filtrado.push(...filter)
-            }
+      dispatch(setDataFilter(filtrado));
+      dispatch(setDataSlice(filtrado.slice(0, 12)));
 
-            dispatch(setDataFilter(filtrado))
-            dispatch(setDataSlice(filtrado.slice(0, 12)))
+      navigate(`/buscar${filtrado.length > 0 ? `/${value}/1` : ""}`);
 
-            navigate(`/buscar${filtrado.length > 0 ? `/${value}/1` : ""}`)
+      if (filtrado.length === 0) {
+        dispatch(setMessageAfterClickOnSearch(`Sin resultados de ${value}`));
+      } else {
+        dispatch(setMessageAfterClickOnSearch(""));
+      }
+    };
 
-            if (filtrado.length === 0) {
-                dispatch(setMessageAfterClickOnSearch(`Sin resultados de ${value}`))
-            } else {
-                dispatch(setMessageAfterClickOnSearch(""))
-            }
-        }
+    const handleKeyDown = (event) => {
+      if (event.keyCode === 13) onSearch();
+    };
 
-        const handleKeyDown = (event) => {
-            if (event.keyCode === 13) onSearch()
-        }
+    const onVolver = () => {
+      dispatch(setDataFilter([]));
+      dispatch(setdisplaySearch(false));
+      dispatch(setMessageAfterClickOnSearch(""));
+    };
 
-        const onVolver = () => {
-            dispatch(setDataFilter([]))
-            dispatch(setdisplaySearch(false))
-            dispatch(setMessageAfterClickOnSearch(""))
-        }
+    return (
+      <ContainerSearch
+        displaySearch={displaySearch}
+      >
+        <ButtonReturn to={"/"} onClick={onVolver}>
+          Volver
+        </ButtonReturn>
+        <ContainerInput>
+          <Input
+            type="text"
+            placeholder="Buscar"
+            onKeyDown={handleKeyDown}
+            ref={inputBuscar}
+          />
+          <Icon
+            onClick={onSearch}
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </Icon>
+        </ContainerInput>
+      </ContainerSearch>
+    );
+  };
 
-        return (
-            <ContainerSearch
-                style={{ display: displaySearch ? "flex" : "none" }}
-            >
-                <ButtonReturn
-                    to={"/"}
-                    onClick={onVolver}
-                >
-                    Volver
-                </ButtonReturn>
-                <ContainerInput>
-                    <Input
-                        type="text"
-                        placeholder="Buscar"
-                        onKeyDown={handleKeyDown}
-                        ref={inputBuscar}
-                    />
-                    <Icon
-                        onClick={onSearch}
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="w-6 h-6">
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                        />
-                    </Icon>
-                </ContainerInput>
-            </ContainerSearch>
-        )
-    }
+  const Logo = () => {
+    const dispatch = useDispatch();
 
-    const Logo = () => {
+    const onClickLogo = () => {
+      dispatch(setMessageAfterClickOnSearch(""));
+      dispatch(setScroll("principal"));
+      dispatch(setDataFilter([]));
+      dispatch(setDataSlice([]));
+      dispatch(setdisplaySearch(false));
+      dispatch(setDataVisualization({}));
+    };
 
-        const dispatch = useDispatch()
+    return (
+      <LogoNavbar to={"/"} onClick={onClickLogo}>
+        <Title>MASCULINIDAD</Title>
+      </LogoNavbar>
+    );
+  };
 
-        const onClickLogo = () => {
-            dispatch(setMessageAfterClickOnSearch(""))
-            dispatch(setScroll("principal"))
-            dispatch(setDataFilter([]))
-            dispatch(setDataSlice([]))
-            dispatch(setdisplaySearch(false))
-            dispatch(setDataVisualization({}))
-        }
+  const SectionsLeft = () => {
+    const { id } = useParams();
+    const dispatch = useDispatch();
+    const { data } = useSelector((state) => state.masculinidad);
 
-        return (
-            <LogoNavbar
-                to={"/"}
-                onClick={onClickLogo}
-            >
-                <Title>MASCULINIDAD</Title>
-            </LogoNavbar>
-        )
-    }
+    const onClickSection = (section) => {
+      dispatch(setDataVisualization({}));
+      dispatch(setSectionCurrent(section));
+      dispatch(setDataSlice(data[section].slice(0, 12)));
+    };
 
-    const SectionsLeft = () => {
-        const { id } = useParams()
-        const dispatch = useDispatch()
-        const { data } = useSelector(state => state.masculinidad)
+    return sections.map((section) => (
+      <NavLink
+        onClick={() => onClickSection(section)}
+        key={section}
+        to={`/${section}/${id ? id : "1"}`}
+        className={({ isActive }) => `${isActive ? "on" : "off"}`}
+      >
+        {section}
+      </NavLink>
+    ));
+  };
 
-        const onClickSection = (section) => {
-            dispatch(setDataVisualization({}))
-            dispatch(setSectionCurrent(section))
-            dispatch(setDataSlice(data[section].slice(0, 12)))
-        }
+  const SectionsRight = () => {
+    const dispatch = useDispatch();
 
-        return (
-            sections.map((section) =>
-                <NavLink
-                    onClick={() => onClickSection(section)}
-                    key={section}
-                    to={`/${section}/${id ? id : '1'}`}
-                    className={({ isActive }) => `${isActive ? 'on' : 'off'}`}
-                >
-                    {section}
-                </NavLink>)
-        )
-    }
+    const onInputFocus = () => {
+      setTimeout(() => {
+        inputBuscar.current.focus();
+      }, 1);
+    };
 
-    const SectionsRight = () => {
+    const onClickBuscar = () => {
+      dispatch(setDataSlice([]));
+      dispatch(setDataFilter([]));
+      dispatch(setDataVisualization({}));
+      dispatch(setdisplaySearch(true));
+      onInputFocus();
+    };
 
-        const dispatch = useDispatch()
+    const onAportar = () => {
+      dispatch(setScroll("aportar"));
+    };
 
-        const onInputFocus = () => {
-            setTimeout(() => {
-                inputBuscar.current.focus()
-            }, 1);
-        }
+    return (
+      <>
+        <NavLink
+          to={"/buscar"}
+          onClick={onClickBuscar}
+          className={({ isActive }) => `${isActive ? "on" : "off"}`}
+        >
+          Buscar
+        </NavLink>
 
-        const onClickBuscar = () => {
-            dispatch(setDataSlice([]))
-            dispatch(setDataFilter([]))
-            dispatch(setDataVisualization({}))
-            dispatch(setdisplaySearch(true))
-            onInputFocus()
-        }
+        <Link to={"/"} onClick={onAportar}>
+          Aportar
+        </Link>
+      </>
+    );
+  };
 
-        const onAportar = () => {
-            dispatch(setScroll('aportar'))
-        }
-
-        return (
-            <>
-                <NavLink
-                    to={'/buscar'}
-                    onClick={onClickBuscar}
-                    className={({ isActive }) => `${isActive ? 'on' : 'off'}`
-                    }
-                >
-                    Buscar
-                </NavLink>
-
-                <Link
-                    to={"/"}
-                    onClick={onAportar}
-                >
-                    Aportar
-                </Link>
-            </>
-        )
-    }
-
-    return [SectionsLeft, SectionsRight, Logo, Buscador]
-}
+  return [SectionsLeft, SectionsRight, Logo, Buscador];
+};
