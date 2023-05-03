@@ -25,6 +25,7 @@ import {
 } from '../../store/masculinidad'
 import styled from 'styled-components'
 import { useEffect } from 'react'
+import { devices } from '../global/valores'
 
 const sections = ['libros', 'youtube', 'twitter', 'tiktok', 'telegram', 'discord']
 
@@ -107,6 +108,10 @@ const LogoNavbar = styled(Link)`
     position: relative;
     height: 100%;
     width: 20vh;
+
+
+
+    
 `
 
 const Title = styled.div`
@@ -117,6 +122,18 @@ const Title = styled.div`
     font-size: 3vh;
     letter-spacing: 0.2vh;
     color: ${props => props.theme.secundario};
+
+    @media ${devices.mobileS} {
+        font-size: 2vh;
+
+  }
+
+  @media ${devices.tablet} {
+    font-size: 3vh;
+
+  }
+
+
 `
 
 export const GeneratorsNav = () => {

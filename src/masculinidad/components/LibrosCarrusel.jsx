@@ -6,23 +6,45 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { setDataSlice, setDataVisualization, setIsHoverCarousel } from "../../store/masculinidad";
 import { useNavigate } from "react-router-dom";
+import { devices } from "../global/valores";
 
 const ConteinerCarousel = styled.div`
     z-index: 5;
     position: absolute;
-    top: 10vh;
     width: 100%;
+
     button {
         display: none !important;
     }
+
+    @media ${devices.mobileS} {
+      top: 60px;
+      width: 70%;
+  }
+
+  @media ${devices.tablet} {
+    width: 100%;
+    top: 0;
+  }
+
+
 `;
 
 const Imagen = styled.img`
-  margin-top: 1vh;
   padding-left: 2vh;
   cursor: pointer;
-  height: 30vh;
-  clip-path: inset(8% 0% 18% 0%);
+  clip-path: inset(8% 0% 3% 0%);
+  height: 150px;
+
+  @media ${devices.mobileS} {
+    height: 100px;
+  }
+
+  @media ${devices.tablet} {
+    height: 150px;
+  }
+
+
 `;
 
 export const LibrosCarrusel = () => {
@@ -40,7 +62,6 @@ export const LibrosCarrusel = () => {
 
     const onClickSlice = ({ image, title, seccion, descripcion }) => {
         dispatch(setDataVisualization({ image, title, seccion, descripcion }));
-        // dispatch(data[seccion].slice(0, 12))
 
         const wordConvert = seccion.toLowerCase();
         dispatch(setDataSlice(data[wordConvert]));

@@ -1,13 +1,14 @@
-import { Tooltip } from "react-tooltip"
+import { Tooltip } from "react-tooltip";
 import { Link } from "react-router-dom";
 import Twitter from "/images/Twitter.svg";
 import Linkedin from "/images/Linkedin.svg";
 import styled from "styled-components";
+import { devices } from "../global/valores";
 
 const Toltip = styled(Tooltip)`
   letter-spacing: normal;
   z-index: 10;
-  position: ${props => props.item === "three" ? "sticky" : "absolute"};
+  position: ${(props) => (props.item === "three" ? "sticky" : "absolute")};
   margin-bottom: 20vh;
   transition: all 0.5s ease;
   height: 100%;
@@ -18,7 +19,7 @@ const Toltip = styled(Tooltip)`
   text-align: center;
   background-color: ${(props) => props.theme.secundario};
   color: ${(props) => props.theme.primario};
-  padding: ${props => props.item === "navbar" && "2vh 2vh 25vh 2vh"};
+  padding: ${(props) => props.item === "navbar" && "2vh 2vh 25vh 2vh"};
   .example-diff-arrow {
     color: #fff;
     background-color: rgb(55, 55, 55);
@@ -27,6 +28,7 @@ const Toltip = styled(Tooltip)`
   .example-arrow {
     background-color: ${(props) => props.theme.secundario};
   }
+
 `;
 
 const ContainerTwitter = styled(Link)`
@@ -49,6 +51,13 @@ const ContainerTwitter = styled(Link)`
     content: "Sígueme!";
     height: 1vh;
     width: 100%;
+
+    @media ${devices.mobileS} {
+      padding: 0px;
+    }
+    @media ${devices.tablet} {
+    padding: 1vh;
+    }
   }
 
   img {
@@ -58,6 +67,13 @@ const ContainerTwitter = styled(Link)`
     height: 100%;
     color: red;
   }
+
+  @media ${devices.mobileS} {
+    height: 30px;
+  }
+  @media ${devices.tablet} {
+    height: 7vh;
+  }
 `;
 
 const ContainerLinkedin = styled(ContainerTwitter)`
@@ -66,26 +82,26 @@ const ContainerLinkedin = styled(ContainerTwitter)`
   }
 `;
 
-export const ToolTipJsx = ({id, item}) => {
-    return (
-        <Toltip
-            item={item}
-            anchorSelect={`#${id}`}
-            clickable
-            className="example-diff-arrow"
-            classNameArrow="example-arrow"
-        >
-            <p>Muy pronto!</p>
-            <ContainerTwitter to={"https://twitter.com/JuNRod_"} target="_blank">
-                <img src={Twitter} alt="Twitter" />
-            </ContainerTwitter>
-            <ContainerLinkedin
-                link={"linkedin"}
-                to={"https://www.linkedin.com/in/junrod/"}
-                target="_blank"
-            >
-                <img src={Linkedin} alt="Twitter" />
-            </ContainerLinkedin>
-        </Toltip>
-    )
-}
+export const ToolTipJsx = ({ id, item }) => {
+  return (
+    <Toltip
+      item={item}
+      anchorSelect={`#${id}`}
+      clickable
+      className="example-diff-arrow"
+      classNameArrow="example-arrow"
+    >
+      <p>Muy pronto!</p>
+      <ContainerTwitter to={"https://twitter.com/JuNRod_"} target="_blank">
+        <img src={Twitter} alt="Twitter" />
+      </ContainerTwitter>
+      <ContainerLinkedin
+        link={"linkedin"}
+        to={"https://www.linkedin.com/in/junrod/"}
+        target="_blank"
+      >
+        <img src={Linkedin} alt="Twitter" />
+      </ContainerLinkedin>
+    </Toltip>
+  );
+};

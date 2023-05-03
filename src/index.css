@@ -37,3 +37,9 @@ html {
   box-sizing: inherit;
 }
 
+
+   * {
+    scroll-padding-top: 10px;
+   }
+
+

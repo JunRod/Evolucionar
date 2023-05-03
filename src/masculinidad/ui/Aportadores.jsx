@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { devices } from "../global/valores"
 
 const Title = styled.h3`
     font-family: ${props => props.theme.fontBoldItalic};
@@ -8,19 +9,89 @@ const Title = styled.h3`
     color: ${props => props.theme.secundario};
     margin: 0;
     letter-spacing: 2vh;
+    text-align: center;
+
+   @media ${devices.mobileS} {
+    font-size: 20px;
+    text-align: center;
+    word-wrap: break-word;
+    width: 320px;
+    letter-spacing: 1.7vh;
+  }
+  
+  @media ${devices.tablet} {
+    font-size: 4vh;
+    width: initial;
+    letter-spacing: 2vh;
+  }
+
+  @media ${devices.laptop} {
+    font-size: 4vh;
+    width: initial;
+    letter-spacing: 2vh;
+  }
+
+  @media ${devices.laptopL} {
+    font-size: 4vh;
+    width: initial;
+    letter-spacing: 2vh;
+  }
 `
 
 const PositionsFlex = styled.div`
+    position: relative;
     display: flex;
     flex-direction: row;
     gap: 6vh;
     font-family: ${props => props.theme.fontMediumItalic};
     font-weight: ${props => props.theme.weightMediumItalic};
     font-style: ${props => props.theme.styleMediumItalic};
+    align-items: center;
+
+    @media ${devices.mobileS} {
+    flex-direction: column;
+    gap: 0px;
+  }
+  
+  @media ${devices.tablet} {
+    flex-direction: row;
+    gap: 6vh;
+  }
+
+  @media ${devices.laptop} {
+    flex-direction: row;
+    gap: 6vh;
+  }
+
+  @media ${devices.laptopL} {
+    flex-direction: row;
+    gap: 6vh;
+  }
+
+
 `
 
 const PositionOne = styled.div`
     margin-top: 3vh;
+
+    @media ${devices.mobileS} {
+        order: 1;
+        margin-top: 0;
+  }
+  
+  @media ${devices.tablet} {
+    order: 0;
+  }
+
+  @media ${devices.laptop} {
+    margin-top: 3vh;
+  }
+
+  @media ${devices.laptopL} {
+    margin-top: 3vh;
+  }
+
+
 `
 
 const MarcadorOne = styled.i`
@@ -116,6 +187,29 @@ const ImagenTwo = styled.img`
 
 const PositionThree = styled.div`
     margin-top: 7vh;
+
+    @media ${devices.mobileS} {
+        margin-top: 0;
+
+        order: 2;
+  }
+  
+  @media ${devices.tablet} {
+    order: 0;
+    margin-top: 3vh;
+
+  }
+
+  @media ${devices.laptop} {
+    margin-top: 3vh;
+
+  }
+
+  @media ${devices.laptopL} {
+    margin-top: 3vh;
+
+  }
+  
 `
 
 const MarcadorThree = styled.i`

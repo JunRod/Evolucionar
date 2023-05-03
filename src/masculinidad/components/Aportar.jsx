@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import { DropFiles } from "./DropFiles"
 import { useDispatch, useSelector } from "react-redux";
 import { setOnButtonsContruibuitors } from "../../store/masculinidad";
+import { devices } from '../global/valores';
 
 const InputLink = styled.input`
     &:focus {
@@ -28,6 +29,24 @@ const InputLink = styled.input`
 
 const InputButtonLeft = styled.div`
     display: flex;
+
+     @media ${devices.mobileS} {
+        width: 140px;
+  }
+  
+  @media ${devices.tablet} {
+    width: initial;
+  }
+
+  @media ${devices.laptop} {
+    width: initial;
+
+  }
+
+  @media ${devices.laptopL} {
+    width: initial;
+
+  }
 `
 
 const Button = styled.div`
@@ -66,6 +85,26 @@ const ButtonSend = styled(Button)`
     &:hover {
         color: ${props => props.theme.primario};
     }
+
+    @media ${devices.mobileS} {
+        width: 110px;
+  }
+  
+  @media ${devices.tablet} {
+    width: 190px;
+  }
+
+  @media ${devices.laptop} {
+    width: 190px;
+
+
+  }
+
+  @media ${devices.laptopL} {
+    width: 190px;
+
+
+  }
 `
 
 const Title = styled.div`
@@ -76,6 +115,27 @@ const Title = styled.div`
     color: ${props => props.theme.secundario};
     letter-spacing: 2vh;
     text-transform: uppercase;
+
+    @media ${devices.mobileS} {
+    font-size: 22px;
+    width: 250px;
+    letter-spacing: 1.7vh;
+  }
+  
+  @media ${devices.tablet} {
+    font-size: 3.5vh;
+    letter-spacing: 2vh;
+    width: initial;
+  }
+
+  @media ${devices.laptop} {
+    font-size: 4vh;
+  }
+
+  @media ${devices.laptopL} {
+    font-size: 4vh;
+
+  }
 `
 
 const FlexInput = styled.div`
@@ -83,6 +143,22 @@ const FlexInput = styled.div`
     flex-direction: column;
     margin-top: 10vh;
     width: 80vh;
+
+    @media ${devices.mobileS} {
+        width: 40vh;
+  }
+  
+  @media ${devices.tablet} {
+    width: 70vh;
+  }
+
+  @media ${devices.laptop} {
+    width: 80vh;
+  }
+
+  @media ${devices.laptopL} {
+    width: 80vh;
+  }
 `
 
 const DescripcionInput = styled.div`
@@ -96,6 +172,8 @@ const DescripcionInput = styled.div`
 const Input = styled.div`
     display: flex;
     justify-content: space-between;
+
+  
 `
 
 const Icon = styled.svg`

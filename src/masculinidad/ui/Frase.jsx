@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Scrollbar } from "smooth-scrollbar-react";
 import styled, { css } from "styled-components";
+import { devices } from "../global/valores";
 
 const phrases = [
   "\Recursos sobre masculinidad seleccionados cuidadosamente y recopilados en una sola web\ <div>Incluye recursos traducidos de otros idiomas al español</div>",
@@ -9,32 +9,61 @@ const phrases = [
 ];
 
 const Phrase = styled.div`
-    ${props => css`
-        color: ${props.theme.secundario};
-        font-family: ${props.theme.fontMediumItalic};
-        font-weight: ${props.theme.weightMediumItalic};
-        font-style: ${props.theme.styleMediumItalic};
-    `}
-    height: 23vh;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+        color: ${({theme}) => theme.secundario};
+        font-family: ${({theme}) => theme.fontMediumItalic};
+        font-weight: ${({theme}) => theme.weightMediumItalic};
+        font-style: ${({theme}) => theme.styleMediumItalic};
+  letter-spacing: 3px;
+    height: 180px;
+    width: 600px;
+    position: relative;
     text-transform: uppercase;
-    margin-bottom: 5vh;
-    letter-spacing: .4vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: scroll;
     text-align: center;
-    font-size: 2.5vh;
-    position: relative;
+    font-size: 17px;
     order: 1;
-    max-height: 30vh;
-    width: 60vh;
     z-index: 20;
 
     div {
       margin-top: 2vh;
       position: relative;
     }
+
+    @media ${devices.mobileS} {
+    font-size: 10px;
+    width: 220px;
+    left: 65px;
+    top: -30px;
+
+  }
+  
+  @media ${devices.tablet} {
+    font-size: 14px;
+    width: 380px;
+    margin-top: 20px;
+    left: 0;
+  }
+
+  @media ${devices.laptop} {
+    width: 600px;
+    font-size: 17px;
+    margin-top: 25px;
+
+  }
+
+  @media ${devices.laptopL} {
+    width: 600px;
+    font-size: 17px;
+
+  }
 `
 
 export const Frase = () => {
@@ -50,11 +79,9 @@ export const Frase = () => {
   }, [phrases.length]);
 
   return (
-    <Scrollbar>
-      <Phrase
-        dangerouslySetInnerHTML={{ __html: phrases[currentItemIndex] }}
-      />
-    </Scrollbar>
+    <Phrase
+      dangerouslySetInnerHTML={{ __html: phrases[currentItemIndex] }}
+    />
   );
 }
 
