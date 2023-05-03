@@ -313,7 +313,7 @@ const Card = styled.div`
     z-index: 100;
     height: 100%;
     width: 100%;
-    background-image: url("../../../public/images/view.png");
+    background-image: url("/images/view.png");
     background-repeat: no-repeat;
     background-size: 100px 100px;
     background-position: center;
