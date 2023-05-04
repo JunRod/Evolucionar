@@ -3,9 +3,10 @@ import { GeneratorsNav } from "./GeneratorsNav";
 import styled from "styled-components";
 import { ToolTipJsx } from "./ToolTipJsx";
 import { Tooltip } from "react-tooltip";
-import { devices } from "../global/valores";
+import { devices, sizes } from "../global/valores";
 import { slide as Menu } from "react-burger-menu";
-import {  styles } from "../global/menu.js"
+import { styles } from "../global/menu.js";
+import { useEffect, useState } from "react";
 
 const Nav = styled.div`
   position: fixed;
@@ -43,7 +44,6 @@ const Nav = styled.div`
         se pondra en modo columna
     */
     flex-wrap: wrap !important;
-
   }
 
   @media ${devices.tablet} {
@@ -55,12 +55,10 @@ const Nav = styled.div`
     flex-direction: row !important;
   }
 
-  @media ${devices.laptopL} {
-  font-size: 16px;
+  @media ${devices.laptop} {
+    font-size: 16px;
   }
 `;
-
-
 
 const ContainerSections = styled.div`
   gap: 2px;
@@ -108,16 +106,15 @@ const ContainerSections = styled.div`
     animation: barrita 0.2s ease-in-out;
     animation-fill-mode: forwards;
 
-  @media ${devices.mobileS} {
-    top: 35px;
-    left: 20px;
-  }
+    @media ${devices.mobileS} {
+      top: 35px;
+      left: 20px;
+    }
 
-  @media ${devices.tablet} {
-    top: 30px;
-    left: 10px;
-  }
-
+    @media ${devices.laptopL} {
+      top: 30px;
+      left: 10px;
+    }
   }
 
   @keyframes barrita {
@@ -143,40 +140,36 @@ const ContainerSections = styled.div`
     mix-blend-mode: difference;
   }
 
-  @media ${devices.mobileS || devices.mobileM || devices.mobileL } {
+  @media ${devices.mobileS} {
     display: none !important;
+    order: 1;
   }
 
   @media ${devices.laptop} {
-    display: ${props => props.displaySearch ? "none": "flex"} !important;
+    order: initial;
+    display: ${(props) => (props.displaySearch ? "none" : "flex")} !important;
   }
-
-
-
 `;
 
 const ContainerSectionsMenu = styled(ContainerSections)`
-
   .bm-burger-button {
     height: 12px !important;
     width: 15px !important;
   }
 
-@media ${devices.mobileS} {
+  @media ${devices.mobileS} {
     display: flex !important;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.laptop} {
     display: none !important;
   }
 
-    a:nth-last-child(2) {
+  a:nth-last-child(2) {
     margin-top: 20px;
     margin-left: 0;
-
   }
-
-`
+`;
 
 const SectionTwo = styled.div`
   z-index: 20;
@@ -185,16 +178,15 @@ const SectionTwo = styled.div`
   align-items: center;
   gap: 3vh;
   margin: 0;
-  
+
   @media ${devices.mobileS} {
     gap: 1.5vh;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.laptop} {
     gap: 3vh;
   }
 `;
-
 
 const Name = styled.div`
   font-family: ${(props) => props.theme.fontMediumItalic};
@@ -205,7 +197,7 @@ const Name = styled.div`
   letter-spacing: 0.8vh;
 
   @media ${devices.mobileS} {
-  font-size: 2vh;
+    font-size: 2vh;
   }
 
   @media ${devices.tablet} {
@@ -220,12 +212,10 @@ const Name = styled.div`
     display: flex !important;
   }
 
-  @media ${devices.laptopL} {
-  font-size:20px;
+  @media ${devices.laptop} {
+    font-size: 20px;
   }
-
 `;
-
 
 const Photo = styled.div`
   background-image: linear-gradient(
@@ -239,7 +229,7 @@ const Photo = styled.div`
 
   @media ${devices.mobileS} {
     width: 25px;
-  height: 25px;
+    height: 25px;
   }
 
   @media ${devices.tablet} {
@@ -247,22 +237,19 @@ const Photo = styled.div`
     height: 6vh;
   }
 
-  @media ${devices.laptopL} {
-    width:40px;
+  @media ${devices.laptop} {
+    width: 40px;
     height: 40px;
   }
-
 `;
 
 const DisplaySmall = styled.div`
-
   @media ${devices.mobileS || devices.mobileM || devices.mobileL} {
     width: 100%;
-    margin-top: ${(props) => props.
-    displaySearch ? "20px" : "0"} ;
+    margin-top: ${(props) => (props.displaySearch ? "20px" : "0")};
     z-index: 2;
     div {
-      display: ${(props) => props.displaySearch ? "flex" : "none"} !important;
+      display: ${(props) => (props.displaySearch ? "flex" : "none")} !important;
       gap: 10px;
 
       a {
@@ -278,27 +265,43 @@ const DisplaySmall = styled.div`
   @media ${devices.laptop} {
     display: none !important;
   }
-`
+`;
 
 export const Navbar = () => {
   const [SectionsLeft, SectionsRight, Logo, Buscador] = GeneratorsNav();
-
   const { displaySearch } = useSelector((state) => state.masculinidad);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsVisible(window.innerWidth < parseInt(sizes.laptop));
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <Nav >
+    <Nav>
       <Logo />
-      <Buscador/>
+      {!isVisible ?
+          <Buscador/>
+       : null}
 
-      <ContainerSections displaySearch={displaySearch} >
+      <ContainerSections displaySearch={displaySearch}>
         <SectionsLeft />
         <SectionsRight />
       </ContainerSections>
 
       <SectionTwo>
         <ToolTipJsx id={"tooltip"} item={"navbar"} />
-        <Name id="tooltip" data-tooltip-delay-hide={10000}>Usuario</Name>
-        <Photo id="tooltip" data-tooltip-delay-hide={10000}/>
+        <Name id="tooltip" data-tooltip-delay-hide={10000}>
+          Usuario
+        </Name>
+        <Photo id="tooltip" data-tooltip-delay-hide={10000} />
 
         <ContainerSectionsMenu>
           <Menu width={200} right styles={styles}>
@@ -307,13 +310,11 @@ export const Navbar = () => {
           </Menu>
         </ContainerSectionsMenu>
       </SectionTwo>
-
-      <DisplaySmall displaySearch={displaySearch}>
-        <Buscador/>
-      </DisplaySmall>
+      {isVisible ? 
+        (<DisplaySmall displaySearch={displaySearch}>
+          <Buscador />
+        </DisplaySmall>)
+      : null}
     </Nav>
   );
 };
-
-
-//Foto y escripcion tiene mucho padding

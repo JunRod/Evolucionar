@@ -11,8 +11,6 @@ import {
 import { useEffect } from "react";
 import { devices } from "../global/valores";
 
-
-
 const Contenedor = styled.div`
   background-color: ${(props) => props.theme.primario};
   display: flex;
@@ -32,7 +30,7 @@ const Contenedor = styled.div`
   @media ${devices.mobileS} {
     padding: 75px 10px 10px 10px;
   }
-  
+
   @media ${devices.tablet} {
     padding: 90px 10px 10px 10px;
   }
@@ -40,7 +38,6 @@ const Contenedor = styled.div`
   @media ${devices.laptop} {
     padding: 80px 10px 10px 10px;
   }
-
 `;
 
 const MessageDataSliceEmpty = styled.div`
@@ -85,21 +82,20 @@ const ContentView = styled.div`
   flex-direction: row;
 
   @media ${devices.mobileS} {
-  height: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
-  
+
   @media ${devices.tablet} {
-  height: 60vh;
-  flex-direction: row;
+    height: 60vh;
+    flex-direction: row;
   }
 
   @media ${devices.laptop} {
-  height: 60vh;
+    height: 60vh;
     margin-top: 0;
   }
-
 `;
 
 const ContentViewDescription = styled.div`
@@ -109,24 +105,25 @@ const ContentViewDescription = styled.div`
   z-index: 5;
   position: relative;
   width: 40%;
-  height: 100%;
+  height: 83%;
   order: 0;
   color: ${(props) => props.theme.secundario};
-  font-size: 3vh;
+  font-size: 2.8vh;
   font-family: ${(props) => props.theme.fontRegular};
   font-weight: ${(props) => props.theme.weightRegular};
   font-style: ${(props) => props.theme.styleRegular};
   gap: 5px;
+  padding-bottom: 30px;
 
-    @media ${devices.mobileS} {
+  @media ${devices.mobileS} {
     margin-bottom: 20px;
     width: 100%;
     padding: 0;
   }
-  
+
   @media ${devices.tablet} {
     width: 80%;
-    padding: 5vh 0vh 0 0;
+    padding: 25px 0 0 0;
   }
 
   @media ${devices.laptop} {
@@ -137,7 +134,7 @@ const Placa = styled.i`
   border-radius: 1vh;
   padding: 1.2vh 1.8vh;
   font-size: 2.2vh;
-  
+
   ${(props) =>
     props.section === "libros"
       ? css`
@@ -150,15 +147,15 @@ const Placa = styled.i`
 `;
 
 const Title = styled.div`
-  font-size: 5.5vh;
+  font-size: 30px;
   font-family: ${(props) => props.theme.fontBoldItalic};
   font-weight: ${(props) => props.theme.weightBoldItalic};
   font-style: normal;
+  line-height: 32px;
 `;
 
 const Description = styled.div`
   font-size: 2.5vh;
-  height: 23vh;
   text-overflow: ellipsis;
   overflow: hidden;
 
@@ -167,18 +164,30 @@ const Description = styled.div`
     height: 130px;
     max-height: 160px;
     text-overflow: ellipsis;
-    overflow: hidden;
+    overflow: scroll;
   }
-  
+
   @media ${devices.tablet} {
     width: 100%;
     height: 200px;
+    max-height: 160px;
+    text-overflow: ellipsis;
+    overflow: scroll;
   }
-
 `;
 
+const ButtonLink = styled(Placa)`
+  background-image: linear-gradient( 109.6deg,  #33a8ec 11.2%, #186be7 91.1% );
+  color: ${props => props.theme.secundario};
+`;
+
+const NavLinkDeleteStyles = styled(NavLink)`
+  color: none !important;
+  text-decoration: none !important;
+`
+
 const ContainerFrontPage = styled.div`
-position: relative;
+  position: relative;
   right: 0;
   width: 100%;
   order: 2;
@@ -191,28 +200,30 @@ position: relative;
     box-shadow: inset 9vh -11vh 14vh 8vh ${(props) => props.theme.primario},
       inset 9vh -11vh 10vh -4vh ${(props) => props.theme.primario};
 
-      @media ${devices.mobileS} {
-        box-shadow: none;
-        background: linear-gradient(0deg, ${props => props.theme.primario} 5%, transparent 60%) no-repeat;
-    } 
-  
-      @media ${devices.tablet} {
-        box-shadow: inset 9vh -11vh 14vh 8vh ${(props) => props.theme.primario},
-      inset 9vh -11vh 10vh -4vh ${(props) => props.theme.primario};
-      }
+    @media ${devices.mobileS} {
+      box-shadow: none;
+      background: linear-gradient(
+          0deg,
+          ${(props) => props.theme.primario} 5%,
+          transparent 60%
+        )
+        no-repeat;
+    }
 
-      @media ${devices.laptop} {
-      }
+    @media ${devices.tablet} {
+      box-shadow: inset 9vh -11vh 14vh 8vh ${(props) => props.theme.primario},
+        inset 9vh -11vh 10vh -4vh ${(props) => props.theme.primario};
+    }
 
+    @media ${devices.laptop} {
+    }
   }
- 
 `;
 
 const Img = styled.img`
   border-radius: 1vh 1vh 0 0;
   height: 100%;
   width: 100%;
-
 `;
 
 const GridBooks = styled.div`
@@ -227,9 +238,10 @@ const GridBooks = styled.div`
   @media ${devices.mobileS} {
     grid-template-columns: repeat(1, 1fr);
     display: grid;
-    padding: ${props => props.displaySearch ? "80px 0 0 0 !important" : "0"};
+    padding: ${(props) =>
+      props.displaySearch ? "80px 0 0 0 !important" : "0"};
   }
-  
+
   @media ${devices.tablet} {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -238,7 +250,6 @@ const GridBooks = styled.div`
     grid-template-columns: repeat(4, 1fr);
     padding: 0 !important;
   }
-
 `;
 
 const CardContainer = styled.div`
@@ -290,32 +301,35 @@ const Card = styled.div`
   align-items: center;
 
   :hover::before {
+    z-index: 40;
     display: flex !important;
   }
 
   ::before {
-    z-index: 90;
+    z-index: 40;
     display: none;
     content: "";
     position: absolute;
     backdrop-filter: blur(4px);
-    height: 97%;
-    width: 95%;
+    height: 100%;
+    width: 100%;
   }
 
   :hover::after {
+    z-index: 93;
     display: flex !important;
   }
 
   ::after {
+    z-index: 93;
     display: none;
     content: "";
     z-index: 100;
     height: 100%;
     width: 100%;
-    background-image: url("/images/view.png");
+    background-image: url("/images/visible.svg");
     background-repeat: no-repeat;
-    background-size: 100px 100px;
+    background-size: 50px 50px;
     background-position: center;
     position: absolute;
   }
@@ -323,11 +337,10 @@ const Card = styled.div`
   @media ${devices.mobileS} {
     flex-direction: row;
   }
-  
+
   @media ${devices.tablet} {
     flex-direction: column;
   }
-
 `;
 
 const CardImagen = styled.div`
@@ -336,13 +349,13 @@ const CardImagen = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 2;
 `;
 
 const CardImg = styled.img`
   border-radius: 10px;
   height: 100%;
   width: 100%;
-
 `;
 
 const CardTitle = styled.div`
@@ -351,6 +364,7 @@ const CardTitle = styled.div`
   font-style: ${(props) => props.theme.styleMediumItalic};
   text-align: center;
   font-size: 3vh;
+  line-height: 25px;
   color: ${(props) => props.theme.secundario};
   letter-spacing: 0.1vh;
 `;
@@ -367,6 +381,7 @@ const CardDescription = styled.div`
 `;
 
 const ContenedorPlacas = styled.div`
+  padding-bottom: 8px;
   color: white !important;
   font-family: ${(props) => props.theme.fontMediumItalic};
   font-weight: ${(props) => props.theme.weightBoldItalic};
@@ -397,7 +412,9 @@ const Pagination = styled.div`
 `;
 
 const FlexColumnInPhone = styled.div`
-  
+
+  width: 100%;
+
   @media ${devices.mobileS} {
     display: flex;
     flex-direction: column;
@@ -408,7 +425,28 @@ const FlexColumnInPhone = styled.div`
     gap: 5px;
     padding-bottom: 20px;
   }
-  
+`;
+
+const Authors = styled.div`
+  font-size: 2.5vh;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding:0 ;
+
+  @media ${devices.mobileS} {
+    width: 100%;
+    max-height: 160px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  @media ${devices.tablet} {
+    width: 100%;
+    max-height: 160px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
 `
 
 export const ContentPage = () => {
@@ -494,15 +532,27 @@ export const ContentPage = () => {
           id="view-content"
           className="animate__animated animate__fadeInDown"
         >
-          <ContentViewDescription>
+          <ContentViewDescription className="a">
             <ContenedorPlacas>
               <Placa section={wordSeccionTransform(dataVisualization.seccion)}>
                 {dataVisualization.seccion}
               </Placa>
             </ContenedorPlacas>
             <Title>{dataVisualization.title}</Title>
-
+            <Authors>{dataVisualization.authors}</Authors>
             <Description>{dataVisualization.descripcion}</Description>
+
+            <ContenedorPlacas>
+            <NavLinkDeleteStyles  to={dataVisualization.link} target="_blank">
+                <ButtonLink>
+                  {dataVisualization.seccion === "Libros"
+                    ? "Descargar"
+                    : `Ir a ${dataVisualization.title}`}
+                </ButtonLink>
+              </NavLinkDeleteStyles>
+            </ContenedorPlacas>
+
+
           </ContentViewDescription>
           <ContainerFrontPage>
             <Img src={dataVisualization.image} />
@@ -516,14 +566,17 @@ export const ContentPage = () => {
         </MessageDataSliceEmpty>
       )}
 
-      <GridBooks displaySearch={displaySearch} style={{ marginTop: !dataVisualization.image && "8vh" }}>
-        {dataSlice?.map(({ image, descripcion, title, seccion }, index) => {
+      <GridBooks
+        displaySearch={displaySearch}
+        style={{ marginTop: !dataVisualization.image && "8vh" }}
+      >
+        {dataSlice?.map(({ image, descripcion, title, seccion, link, authors }, index) => {
           return (
             <CardContainer
               key={index}
               id={`card${index}`}
               onClick={() =>
-                onClickCardContainer({ image, descripcion, title, seccion })
+                onClickCardContainer({ image, descripcion, title, seccion, link, authors})
               }
             >
               <Card>
@@ -532,7 +585,6 @@ export const ContentPage = () => {
                 </CardImagen>
 
                 <FlexColumnInPhone>
-
                   <CardTitle>{title}</CardTitle>
 
                   <CardDescription>{descripcion}</CardDescription>
@@ -543,7 +595,7 @@ export const ContentPage = () => {
                         {seccion}
                       </Placa>
                     </ContenedorPlacas>
-                )}
+                  )}
                 </FlexColumnInPhone>
               </Card>
             </CardContainer>

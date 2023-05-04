@@ -53,12 +53,12 @@ const ButtonReturn = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   z-index: 90;
-  padding: 4px 8px;
+  padding: 3px 3px;
   font-family: ${(props) => props.theme.fontRegular};
   font-weight: ${(props) => props.theme.weightRegular};
   font-style: ${(props) => props.theme.styleRegular};
   color: ${(props) => props.theme.secundario};
-  font-size: 24px;
+  font-size: 18px;
   border: 0.5vh solid ${(props) => props.theme.secundario};
   border-radius: 1vh;
   transition: all 0.3s ease-in-out;
@@ -158,9 +158,11 @@ export const GeneratorsNav = () => {
     const onSearch = async () => {
       dispatch(setDataVisualization({}));
 
-      const value = inputBuscar.current.value.toLowerCase();
+      const value = inputBuscar.current.value;
 
-      if (value.length < 1) {
+      console.log(value)
+
+      if (value.length === 0) {
         toast.error("Debe rellenar el campo.");
         return;
       }

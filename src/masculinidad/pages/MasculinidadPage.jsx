@@ -19,10 +19,10 @@ const WindowOne = styled.div`
   background-color: ${(props) => props.theme.primario};
 
   @media ${devices.mobileS} {
-    height: 100vh;
+    height: 710px;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     height: 50vh;
   }
 
@@ -52,7 +52,7 @@ const FraseLogoContainer = styled.div`
     top: -60px;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     width: 150px;
     right: 130px;
     top: 10px;
@@ -77,6 +77,7 @@ const WindowTwo = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `;
 
 const WindowThree = styled.div`
@@ -111,7 +112,7 @@ const ContainerLogoCarousel = styled.div`
     top: -70px;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     width: 490px;
     height: 290px;
     top: 0;

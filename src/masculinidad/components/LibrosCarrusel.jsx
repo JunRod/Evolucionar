@@ -22,7 +22,7 @@ const ConteinerCarousel = styled.div`
       width: 70%;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     width: 100%;
     top: 0;
   }
@@ -40,7 +40,7 @@ const Imagen = styled.img`
     height: 100px;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     height: 150px;
   }
 
@@ -57,7 +57,7 @@ export const LibrosCarrusel = () => {
     let dataCarousel = [];
 
     for (const key in data) {
-        dataCarousel.push(...data[key].slice(0, 5));
+        dataCarousel.push(...data[key].slice(0, 5).filter((object) => object.title !== "Titulo"));
     }
 
     const onClickSlice = ({ image, title, seccion, descripcion }) => {

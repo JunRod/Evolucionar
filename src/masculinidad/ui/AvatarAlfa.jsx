@@ -62,7 +62,7 @@ const WordsRey = styled.div`
     top: 76%;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     font-family: ${({ theme }) => theme.fontMediumItalic};
     font-weight: ${({ theme }) => theme.weightMediumItalic};
     font-style: ${({ theme }) => theme.styleMediumItalic};
@@ -89,7 +89,7 @@ const WordsRey = styled.div`
       background-color: ${(props) => props.theme.secundario};
     }
 
-    @media ${devices.tablet} {
+    @media ${devices.mobileL} {
       right: 45px;
       background-color: ${(props) => props.theme.primario};
     }
@@ -106,7 +106,7 @@ const WordsRey = styled.div`
       background-color: ${(props) => props.theme.secundario};
     }
 
-    @media ${devices.tablet} {
+    @media ${devices.mobileL} {
       right: -33px;
       background-color: ${(props) => props.theme.primario};
     }
@@ -125,7 +125,7 @@ const WordsAmante = styled(WordsRey)`
       right: 10px;
     }
 
-    @media ${devices.tablet} {
+    @media ${devices.mobileL} {
       right: 80px;
     }
   }
@@ -140,7 +140,7 @@ const WordsAmante = styled(WordsRey)`
     top: 60px;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     top: 90px;
     right: -80px;
   }
@@ -263,7 +263,7 @@ const Circle8 = styled.img`
     display: none;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     display: flex;
   }
 
@@ -307,7 +307,7 @@ const Circle10 = styled.div`
     display: none;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     display: flex;
   }
 
@@ -335,7 +335,7 @@ const AvatarContainer = styled.div`
     top: 280px;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     position: relative;
 
     top: -7px;

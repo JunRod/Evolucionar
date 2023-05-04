@@ -45,7 +45,7 @@ const Phrase = styled.div`
 
   }
   
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     font-size: 14px;
     width: 380px;
     margin-top: 20px;

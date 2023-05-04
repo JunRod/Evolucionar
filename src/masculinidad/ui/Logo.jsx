@@ -18,7 +18,7 @@ const LogoContainer = styled.div`
   @media ${devices.mobileM} {
   }
   
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     width: 100%;
   }
 
@@ -53,7 +53,7 @@ const Title = styled.div`
     right: 16px;
   }
   
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     font-size: 58px;
     top: -25px;
   }
@@ -85,7 +85,7 @@ const TitleRecursos = styled.div`
     top: 60px;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     top: 90px;
     right: -80px;
   } */
@@ -97,7 +97,7 @@ const TitleRecursos = styled.div`
     height: 10px;
   }
   
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     top: 45px;
     font-size: 9px;
     width: 30px;
@@ -139,7 +139,7 @@ const Circulo = styled.div`
 
   }
   
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     height: 25px;
     width: 25px;
     top: -20px;
@@ -175,7 +175,7 @@ const Circulo2 = styled(Circulo)`
 
   }
   
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     left: -200px;
     top: 110px;
   }
@@ -212,7 +212,7 @@ const Line = styled.div`
     -webkit-mask-position: -280px -71px;
   }
   
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
     border: 10px solid ${(props) => props.theme.secundario};
     left: initial;
     height: 90px;
@@ -254,7 +254,7 @@ const Line2 = styled(Line)`
     left: 260px;
   }
   
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
   -webkit-mask-position: 110px -310px;
   left: initial;
   }
