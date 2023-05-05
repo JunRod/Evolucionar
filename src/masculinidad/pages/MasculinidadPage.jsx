@@ -11,76 +11,51 @@ const WindowOne = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  height: 100vh;
-  min-height: 660px;
-  max-height: 1200px;
   justify-content: center;
   overflow: hidden;
+  height: 100vh;
   background-color: ${(props) => props.theme.primario};
-
-  @media ${devices.mobileS} {
-    height: 710px;
-  }
-
-  @media ${devices.mobileL} {
-    height: 50vh;
-  }
-
-  @media ${devices.laptop} {
-    height: 100vh;
-  }
-
-  @media ${devices.laptopL} {
-    height: 100vh;
-  }
 `;
 
 const FraseLogoContainer = styled.div`
   align-items: center;
-  margin-top: 35px;
-  width: 580px;
-  height: 100%;
-  right: 160px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   order: 2;
 
-  @media ${devices.mobileS} {
-    right: -12px;
-    top: -60px;
+  @media ${devices.mobileL} {
+    right: 75px;
   }
 
-  @media ${devices.mobileL} {
-    width: 150px;
-    right: 130px;
-    top: 10px;
+  @media ${devices.tablet} {
+    right: 200px;
+    width: 0px;
   }
 
   @media ${devices.laptop} {
-    right: 160px;
-    width: 580px;
-  }
-
-  @media ${devices.laptopL} {
-    right: 160px;
-    width: 580px;
+    right: 180px;
+    width: 0px;
+    top: -30px;
   }
 `;
 
 const WindowTwo = styled.div`
   position: relative;
   background-color: ${(props) => props.theme.secundario};
-  height: 80vh;
+  height: 550px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 `;
 
 const WindowThree = styled.div`
+  overflow: hidden;
+
   position: relative;
   background-color: ${(props) => props.theme.primario};
   height: 100%;
@@ -104,31 +79,26 @@ const AportarContainer = styled.div`
 const ContainerLogoCarousel = styled.div`
   position: relative;
   display: flex;
-  width: 1000px;
   height: 320px;
 
   @media ${devices.mobileS} {
     position: relative;
     top: -70px;
+    width: 900px;
   }
 
   @media ${devices.mobileL} {
-    width: 490px;
+    width: 1000px;
     height: 290px;
     top: 0;
   }
 
   @media ${devices.laptop} {
-    width: 1000px;
+    width: 1200px;
     height: 300px;
     right: 0;
   }
 
-  @media ${devices.laptopL} {
-    width: 1000px;
-    height: 300px;
-    right: 0;
-  }
 `;
 
 export const MasculinidadPage = () => {
@@ -145,21 +115,20 @@ export const MasculinidadPage = () => {
     <>
       <WindowOne id="seccion-principal">
         <FraseLogoContainer>
-          <Frase />
-
           <ContainerLogoCarousel>
             <Logo />
             <LibrosCarrusel />
           </ContainerLogoCarousel>
+          <Frase />
         </FraseLogoContainer>
         <AvatarAlfa />
       </WindowOne>
 
       <WindowTwo>
         <Logo2 />
-      </WindowTwo> 
+      </WindowTwo>
 
-       <WindowThree id="my-tooltip" data-tooltip-delay-hide={10000}>
+      <WindowThree id="my-tooltip" data-tooltip-delay-hide={10000}>
         <ToolTipJsx id={"my-tooltip"} item={"three"} />
         <Aportadores />
 

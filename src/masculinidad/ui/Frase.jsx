@@ -4,70 +4,79 @@ import styled, { css } from "styled-components";
 import { devices } from "../global/valores";
 
 const phrases = [
-  "\Recursos sobre masculinidad seleccionados cuidadosamente y recopilados en una sola web\ <div>Incluye recursos traducidos de otros idiomas al español</div>",
-  "\'El secreto no es correr detrás de las mariposas, es cuidar el jardín para que ellas vengan hacia ti'\ <div>Mário Quintana</div>",
+  "Recursos sobre masculinidad seleccionados cuidadosamente y recopilados en una sola web <div>Incluye recursos traducidos de otros idiomas al español</div>",
+  "'El secreto no es correr detrás de las mariposas, es cuidar el jardín para que ellas vengan hacia ti' <div>Mário Quintana</div>",
 ];
 
 const Phrase = styled.div`
-
   ::-webkit-scrollbar {
     display: none;
   }
 
-        color: ${({theme}) => theme.secundario};
-        font-family: ${({theme}) => theme.fontMediumItalic};
-        font-weight: ${({theme}) => theme.weightMediumItalic};
-        font-style: ${({theme}) => theme.styleMediumItalic};
+  color: ${({ theme }) => theme.secundario};
+  font-family: ${({ theme }) => theme.fontMediumItalic};
+  font-weight: ${({ theme }) => theme.weightMediumItalic};
+  font-style: ${({ theme }) => theme.styleMediumItalic};
   letter-spacing: 3px;
-    height: 180px;
-    width: 600px;
+  height: 180px;
+  width: 600px;
+  position: relative;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: scroll;
+  text-align: center;
+  font-size: 17px;
+  order: 1;
+  z-index: 20;
+
+  div {
+    margin-top: 10px;
     position: relative;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: scroll;
-    text-align: center;
-    font-size: 17px;
-    order: 1;
-    z-index: 20;
-
-    div {
-      margin-top: 2vh;
-      position: relative;
-    }
-
-    @media ${devices.mobileS} {
-    font-size: 10px;
-    width: 220px;
-    left: 65px;
-    top: -30px;
-
   }
-  
+
+  @media ${devices.mobileS} {
+    font-size: 10px;
+    width: 200px;
+    right: -80px;
+    top: -30px;
+  }
+
+  @media ${devices.mobileM} {
+    font-size: 10px;
+    width: 200px;
+    right: -105px;
+    top: -30px;
+  }
+
   @media ${devices.mobileL} {
-    font-size: 14px;
+    font-size: 11px;
+    width: 300px;
+    left: 165px;
+    right: 0px;
+  }
+
+  @media ${devices.mobileXL} {
+    font-size: 12px;
     width: 380px;
-    margin-top: 20px;
+    left: 200px;
+  }
+
+  @media ${devices.tablet} {
+    font-size: 17px;
     left: 0;
+    top: 60px;
   }
 
   @media ${devices.laptop} {
-    width: 600px;
     font-size: 17px;
-    margin-top: 25px;
-
+    left: 0;
+    top: 80px;
   }
-
-  @media ${devices.laptopL} {
-    width: 600px;
-    font-size: 17px;
-
-  }
-`
+`;
 
 export const Frase = () => {
-
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
 
   useEffect(() => {
@@ -79,9 +88,6 @@ export const Frase = () => {
   }, [phrases.length]);
 
   return (
-    <Phrase
-      dangerouslySetInnerHTML={{ __html: phrases[currentItemIndex] }}
-    />
+    <Phrase dangerouslySetInnerHTML={{ __html: phrases[currentItemIndex] }} />
   );
-}
-
+};

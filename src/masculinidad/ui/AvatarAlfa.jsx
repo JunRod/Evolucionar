@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Vector2 from "/images//VectorEyes2.svg";
 import Vector3 from "/images/Circle2.svg";
 import { devices } from "../global/valores";
@@ -40,38 +40,36 @@ const WordsRey = styled.div`
   font-family: ${({ theme }) => theme.fontMediumItalic};
   font-weight: ${({ theme }) => theme.weightMediumItalic};
   font-style: ${({ theme }) => theme.styleMediumItalic};
-  font-size: 17px;
-  padding: 3px 3px 3px 140px;
-  top: 58%;
+  padding: 3px 3px 3px 200px;
   z-index: 16;
-  right: 70%;
   letter-spacing: 10px;
   display: flex;
   flex-direction: column-reverse;
   text-align: end;
 
   @media ${devices.mobileS} {
-    color: ${({ theme }) => theme.primario};
-    font-family: ${({ theme }) => theme.fontBlackItalic};
-    font-weight: ${({ theme }) => theme.weightBlackItalic};
-    font-style: ${({ theme }) => theme.styleBlackItalic};
-
     font-size: 10px;
     letter-spacing: 5px;
-    right: 70%;
-    top: 76%;
+    right: 290px;
+    top: 200px;
+  }
+
+  @media ${devices.mobileM} {
+    right: 320px;
   }
 
   @media ${devices.mobileL} {
-    font-family: ${({ theme }) => theme.fontMediumItalic};
-    font-weight: ${({ theme }) => theme.weightMediumItalic};
-    font-style: ${({ theme }) => theme.styleMediumItalic};
-    color: ${({ theme }) => theme.secundario};
+    right: 340px;
+  }
 
-    font-size: 18px;
+  @media ${devices.mobileXL} {
+    right: 330px;
+  }
+
+  @media ${devices.tablet} {
+    font-size: 16px;
     letter-spacing: 10px;
     right: 75%;
-
     top: 58%;
   }
 
@@ -81,69 +79,36 @@ const WordsRey = styled.div`
     position: relative;
     content: "REY";
     padding: inherit;
-    background-color: ${(props) => props.theme.primario};
     z-index: 12;
-
-    @media ${devices.mobileS} {
-      right: 0px;
-      background-color: ${(props) => props.theme.secundario};
+    background-color: ${(props) => props.theme.primario};
+    right: 0px;
     }
-
-    @media ${devices.mobileL} {
-      right: 45px;
-      background-color: ${(props) => props.theme.primario};
-    }
-  }
 
   &::after {
     position: relative;
     content: "GUERRERO";
     padding: inherit;
     background-color: ${(props) => props.theme.primario};
-
-    @media ${devices.mobileS} {
-      right: -64px;
-      background-color: ${(props) => props.theme.secundario};
-    }
-
-    @media ${devices.mobileL} {
-      right: -33px;
-      background-color: ${(props) => props.theme.primario};
-    }
+    right: -64px;
   }
 `;
 
 const WordsAmante = styled(WordsRey)`
-  top: 90px;
-  right: initial;
+  right: -35px;
+  top: 60px;
 
   &::before {
     content: "MAGO";
-    right: 160px;
-
-    @media ${devices.mobileS} {
-      right: 10px;
-    }
-
-    @media ${devices.mobileL} {
-      right: 80px;
-    }
   }
 
   &::after {
-    right: -10px;
     content: "AMANTE";
   }
 
-  @media ${devices.mobileS} {
-    right: -45px;
-    top: 60px;
+  @media ${devices.tablet} {
+    top: 83px;
   }
 
-  @media ${devices.mobileL} {
-    top: 90px;
-    right: -80px;
-  }
 `;
 
 const Eyes1 = styled.img`
@@ -322,42 +287,38 @@ const Circle10 = styled.div`
 
 const AvatarContainer = styled.div`
   position: relative;
-  height: 101%;
-  width: 920px;
-  max-width: 770px;
-  top: -7px;
+  height: 100%;
 
   @media ${devices.mobileS} {
     position: absolute;
-    height: 430px;
-    width: 400px;
+    height: 58%;
+    width: 420px;
     right: 20px;
-    top: 280px;
+    bottom: 0px;
   }
 
   @media ${devices.mobileL} {
-    position: relative;
+    right: 120px;
+  }
 
-    top: -7px;
-    width: 920px;
+  @media ${devices.mobileXL} {
+    right: 200px;
+  }
+
+  @media ${devices.tablet} {
+    position: relative;
     height: 101%;
-    left: 10px;
-    right: 0;
-    top: 0;
+    top: -8px;
+    width: 750px;
+    right: 140px;
   }
 
   @media ${devices.laptop} {
-    top: -7px;
-    left: 30px;
-    width: 920px;
+    right: 240px;
+    position: relative;
     height: 101%;
-  }
-
-  @media ${devices.laptopL} {
-    height: 101%;
-    top: -7px;
-    width: 920px;
-    left: initial;
+    top: -8px;
+    width: 800px;
   }
 `;
 

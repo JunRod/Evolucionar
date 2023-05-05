@@ -25,9 +25,9 @@ const sections = [
 ];
 
 const ContainerSearch = styled.div`
+  gap: 8px;
   display: flex;
   align-items: center;
-  gap: 3vh;
 
   @media ${devices.mobileS || devices.mobileM || devices.mobileL} {
     display: none !important;
@@ -38,27 +38,16 @@ const ContainerSearch = styled.div`
   }
 `;
 
-// const BuscadorInWindowsSmall = styled(ContainerSearch)`
-//   @media ${devices.mobileS || devices.mobileM || devices.mobileL} { 
-//    /* display: ${(props) => props.displaySearch ? "flex" : "none"} !important; */
-//    ${props => console.log(props)}
-//   }
-  
-//    @media ${devices.laptop} {
-//     /* display: none !important;  */
-//    } 
-// `;
-
 const ButtonReturn = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   z-index: 90;
-  padding: 3px 3px;
+  padding: 3px 4px;
   font-family: ${(props) => props.theme.fontRegular};
   font-weight: ${(props) => props.theme.weightRegular};
   font-style: ${(props) => props.theme.styleRegular};
   color: ${(props) => props.theme.secundario};
-  font-size: 18px;
+  font-size: 17px;
   border: 0.5vh solid ${(props) => props.theme.secundario};
   border-radius: 1vh;
   transition: all 0.3s ease-in-out;
@@ -137,7 +126,7 @@ const Title = styled.div`
     font-size: 2vh;
   }
   @media ${devices.tablet} {
-    font-size: 3vh;
+    font-size: 16px;
   }
 
   @media ${devices.laptopL} {
@@ -159,8 +148,6 @@ export const GeneratorsNav = () => {
       dispatch(setDataVisualization({}));
 
       const value = inputBuscar.current.value;
-
-      console.log(value)
 
       if (value.length === 0) {
         toast.error("Debe rellenar el campo.");
@@ -269,7 +256,7 @@ export const GeneratorsNav = () => {
       <NavLink
         onClick={() => onClickSection(section)}
         key={section}
-        to={`/${section}/${id ? id : "1"}`}
+        to={`/${section}/1`}
         className={({ isActive }) => `${isActive ? "on" : "off"}`}
       >
         {section}

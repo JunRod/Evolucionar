@@ -3,9 +3,9 @@ import { GeneratorsNav } from "./GeneratorsNav";
 import styled from "styled-components";
 import { ToolTipJsx } from "./ToolTipJsx";
 import { Tooltip } from "react-tooltip";
-import { devices, sizes } from "../global/valores";
+import { devices, sizes } from "../global/valores.js";
 import { slide as Menu } from "react-burger-menu";
-import { styles } from "../global/menu.js";
+import { styles } from "../global/menuStyles.js";
 import { useEffect, useState } from "react";
 
 const Nav = styled.div`
@@ -61,12 +61,11 @@ const Nav = styled.div`
 `;
 
 const ContainerSections = styled.div`
-  gap: 2px;
   list-style: none;
   padding: 0;
   margin: 0;
   color: ${(props) => props.theme.secundario};
-  letter-spacing: 2px;
+  letter-spacing: 2.1px;
   z-index: 20;
   justify-content: center;
   text-transform: uppercase;
@@ -111,9 +110,9 @@ const ContainerSections = styled.div`
       left: 20px;
     }
 
-    @media ${devices.laptopL} {
-      top: 30px;
-      left: 10px;
+    @media ${devices.laptop} {
+      top: 28px;
+      left: 2px;
     }
   }
 
@@ -146,6 +145,7 @@ const ContainerSections = styled.div`
   }
 
   @media ${devices.laptop} {
+    font-size: 12px;
     order: initial;
     display: ${(props) => (props.displaySearch ? "none" : "flex")} !important;
   }
@@ -180,11 +180,11 @@ const SectionTwo = styled.div`
   margin: 0;
 
   @media ${devices.mobileS} {
-    gap: 1.5vh;
+    gap: 10px;
   }
 
   @media ${devices.laptop} {
-    gap: 3vh;
+    gap: 10px;
   }
 `;
 
@@ -197,14 +197,6 @@ const Name = styled.div`
   letter-spacing: 0.8vh;
 
   @media ${devices.mobileS} {
-    font-size: 2vh;
-  }
-
-  @media ${devices.tablet} {
-    font-size: 2.6vh;
-  }
-
-  @media ${devices.mobileS} {
     display: none !important;
   }
 
@@ -213,7 +205,7 @@ const Name = styled.div`
   }
 
   @media ${devices.laptop} {
-    font-size: 20px;
+    font-size: 12px;
   }
 `;
 
@@ -233,14 +225,15 @@ const Photo = styled.div`
   }
 
   @media ${devices.tablet} {
-    width: 6vh;
-    height: 6vh;
+    width: 30px;
+    height: 30px;
   }
 
   @media ${devices.laptop} {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
   }
+
 `;
 
 const DisplaySmall = styled.div`

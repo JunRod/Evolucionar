@@ -15,30 +15,30 @@ const LogoContainer = styled.div`
   justify-content: center;
   backdrop-filter: blur(3px);
 
-  @media ${devices.mobileM} {
+  @media ${devices.mobileS} {
+    right: -11px;
   }
-  
+
   @media ${devices.mobileL} {
-    width: 100%;
+    top: -48px;
+    right: -88px;
+  }
+
+  @media ${devices.tablet} {
+    top: 20px;
+    right: 0px;
   }
 
   @media ${devices.laptop} {
-    right: 0;
-    width: 100%;
+    right: 0px;
   }
-
-  @media ${devices.laptopL} {
-    right: 0;
-    max-width: 2000px;
-  }
-
 `;
 
 const Title = styled.div`
-    font-family: ${props => props.theme.fontBoldItalic};
-    font-weight: ${props => props.theme.weightBoldItalic};
-    font-style: ${props => props.theme.styleBoldItalic};
-    color: ${props => props.theme.secundario};
+  font-family: ${(props) => props.theme.fontBoldItalic};
+  font-weight: ${(props) => props.theme.weightBoldItalic};
+  font-style: ${(props) => props.theme.styleBoldItalic};
+  color: ${(props) => props.theme.secundario};
   /* font-size: 17.5vh; */
   font-size: 120px;
   width: 100%;
@@ -50,45 +50,35 @@ const Title = styled.div`
 
   @media ${devices.mobileS} {
     font-size: 40px;
-    right: 16px;
+    right: 0px;
   }
-  
+
   @media ${devices.mobileL} {
     font-size: 58px;
     top: -25px;
   }
 
+  @media ${devices.tablet} {
+    font-size: 78px;
+    top: -25px;
+  }
+
   @media ${devices.laptop} {
-    font-size: 120px;
-    top: -38px;
+    font-size: 115px;
+    top: 0px;
   }
-
-  @media ${devices.laptopL} {
-    font-size: 130px;
-  }
-
 `;
 
 const TitleRecursos = styled.div`
   position: relative;
-  font-family: ${props => props.theme.fontBoldItalic};
-  font-weight: ${props => props.theme.weightBoldItalic};
-  font-style: ${props => props.theme.styleBoldItalic};
+  font-family: ${(props) => props.theme.fontBoldItalic};
+  font-weight: ${(props) => props.theme.weightBoldItalic};
+  font-style: ${(props) => props.theme.styleBoldItalic};
   font-size: 16px;
   height: 25px;
   top: 96px;
   width: 50px;
   transform: rotate(-80deg);
-
-  /* @media ${devices.mobileS} {
-      right: -45px;
-    top: 60px;
-  }
-
-  @media ${devices.mobileL} {
-    top: 90px;
-    right: -80px;
-  } */
 
   @media ${devices.mobileS} {
     top: 30px;
@@ -96,7 +86,7 @@ const TitleRecursos = styled.div`
     width: 20px;
     height: 10px;
   }
-  
+
   @media ${devices.mobileL} {
     top: 45px;
     font-size: 9px;
@@ -104,18 +94,16 @@ const TitleRecursos = styled.div`
     height: 10px;
   }
 
-  @media ${devices.laptop} {
-    font-size: 16px;
-  height: 25px;
-  top: 96px;
-  width: 50px;
+  @media ${devices.tablet} {
+    font-size: 10px;
+    top: 60px;
+    width: 35px;
   }
 
-  @media ${devices.laptopL} {
-    font-size: 16px;
-  height: 25px;
-  top: 105px;
-  width: 50px;
+  @media ${devices.laptop} {
+    font-size: 15px;
+    top: 104px;
+    width: 35px;
   }
 `;
 
@@ -131,62 +119,61 @@ const Circulo = styled.div`
   border: 8px solid ${(props) => props.theme.secundario};
 
   @media ${devices.mobileS} {
-  border: 4px solid ${(props) => props.theme.secundario};
-  height: 20px;
-  width: 20px;
-    left: 145px;
+    border: 4px solid ${(props) => props.theme.secundario};
+    height: 20px;
+    width: 20px;
+    left: 180px;
     top: -30px;
-
   }
-  
+
   @media ${devices.mobileL} {
     height: 25px;
     width: 25px;
-    top: -20px;
-    left: 200px;
+    top: -15px;
+    left: 195px;
+    border: 5px solid ${(props) => props.theme.secundario};
+  }
+
+  @media ${devices.tablet} {
+    height: 25px;
+    width: 25px;
+    top: -45px;
+    left: 275px;
     border: 6px solid ${(props) => props.theme.secundario};
   }
 
   @media ${devices.laptop} {
-    top: -55px;
-    left: 350px;
+    top: 0px;
+    left: 365px;
     height: 40px;
-  width: 40px;
+    width: 40px;
     border: 8px solid ${(props) => props.theme.secundario};
   }
-
-  @media ${devices.laptopL} {
-    top: -45px;
-    left: 350px;
-    height: 40px;
-  width: 40px;
-    border: 8px solid ${(props) => props.theme.secundario};
-  }
-
 `;
 
 const Circulo2 = styled(Circulo)`
   top: 230px;
   left: -360px;
-    @media ${devices.mobileS} {
-      left: -170px;
-    top: 85px;
-
-
+  @media ${devices.mobileS} {
+    left: -185px;
+    top: 90px;
   }
-  
+
   @media ${devices.mobileL} {
     left: -200px;
     top: 110px;
   }
 
-  @media ${devices.laptop} {
-    left: -350px;
-    top: 235px;
+  @media ${devices.tablet} {
+    left: -270px;
+    top: 150px;
   }
 
-  @media ${devices.laptopL} {
+  @media ${devices.laptop} {
+    left: -370px;
+    top: 255px;
   }
+
 `;
 
 const Line = styled.div`
@@ -201,25 +188,32 @@ const Line = styled.div`
   -webkit-mask-size: 1000px 600px;
   -webkit-mask-position: -300px -45px;
 
-
   @media ${devices.mobileS} {
     border: 5px solid ${(props) => props.theme.secundario};
     height: 70px;
     transform: rotate(-20deg);
     width: 400px;
-    left: 310px;
     -webkit-mask-size: 800px 520px;
-    -webkit-mask-position: -280px -71px;
+    -webkit-mask-position: -280px -85px;
   }
-  
+
   @media ${devices.mobileL} {
-    border: 10px solid ${(props) => props.theme.secundario};
+    -webkit-mask-position: -280px -75px;
+    border: 8px solid ${(props) => props.theme.secundario};
+    height: 75px;
+    width: 430px;
+    top: 110px;
+  }
+
+  @media ${devices.tablet} {
+    top: 90px;
+    -webkit-mask-size: 1000px 600px;
+    -webkit-mask-position: -300px -65px;
+    transform: rotate(-21deg);
+    height: 100px;
+    width: 600px;
     left: initial;
-    height: 90px;
-    transform: rotate(-20deg);
-    width: 450px;
-    -webkit-mask-size: 800px 540px;
-    -webkit-mask-position: -300px -75px;
+    border: 10px solid ${(props) => props.theme.secundario};
   }
 
   @media ${devices.laptop} {
@@ -230,40 +224,25 @@ const Line = styled.div`
   width: 800px;
   left: initial;
   border: 13px solid ${(props) => props.theme.secundario};
-
-  }
-
-  @media ${devices.laptopL} {
-    -webkit-mask-size: 1000px 600px;
-  -webkit-mask-position: -300px -45px;
-  transform: rotate(-21deg);
-  height: 200px;
-  width: 800px;
-  left: initial;
-  border: 13px solid ${(props) => props.theme.secundario};
-
   }
 
 `;
 
 const Line2 = styled(Line)`
-  -webkit-mask-position: 120px -348px;
 
   @media ${devices.mobileS} {
-  -webkit-mask-position: 120px -297px;
-    left: 260px;
+    -webkit-mask-position: 120px -290px;
   }
-  
+
   @media ${devices.mobileL} {
-  -webkit-mask-position: 110px -310px;
-  left: initial;
+    -webkit-mask-position: 110px -295px;
+  }
+
+  @media ${devices.tablet} {
+    -webkit-mask-position: 110px -350px;
   }
 
   @media ${devices.laptop} {
-    -webkit-mask-position: 120px -348px;
-  }
-
-  @media ${devices.laptopL} {
     -webkit-mask-position: 120px -348px;
   }
 `;
@@ -284,14 +263,14 @@ export const Logo = () => {
     <LogoContainer
       onMouseEnter={onHover}
       isHoverLogo={isHoverLogo}
-      className={`animate__animated animate__faster ${isHoverLogo ? "animate__fadeOut" : "animate__fadeIn"
-        } `}
+      className={`animate__animated animate__faster ${
+        isHoverLogo ? "animate__fadeOut" : "animate__fadeIn"
+      } `}
     >
-
-        <Circulo />
-       <Circulo2 />
-          <Line />
-        <Line2 />
+      <Circulo />
+      <Circulo2 />
+      <Line />
+      <Line2 />
       <Title>
         MASCUL<TitleRecursos>RECURSOS</TitleRecursos>NIDAD
       </Title>

@@ -16,7 +16,6 @@ const Contenedor = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 11vh 10vh 10vh 10vh;
   height: 100%;
 
   height: ${(props) => {
@@ -28,15 +27,11 @@ const Contenedor = styled.div`
   }};
 
   @media ${devices.mobileS} {
-    padding: 75px 10px 10px 10px;
-  }
-
-  @media ${devices.tablet} {
-    padding: 90px 10px 10px 10px;
+    padding: 55px 10px 10px 10px;
   }
 
   @media ${devices.laptop} {
-    padding: 80px 10px 10px 10px;
+    padding: 55px 10px 10px 10px;
   }
 `;
 
@@ -77,18 +72,17 @@ const Button = styled(NavLink)`
 const ContentView = styled.div`
   padding: 10px;
   position: relative;
-  height: 60vh;
   display: flex;
   flex-direction: row;
 
   @media ${devices.mobileS} {
-    height: 100%;
+    height: 700px;
     display: flex;
     flex-direction: column;
   }
 
   @media ${devices.tablet} {
-    height: 60vh;
+    height: 400px;
     flex-direction: row;
   }
 
@@ -105,7 +99,6 @@ const ContentViewDescription = styled.div`
   z-index: 5;
   position: relative;
   width: 40%;
-  height: 83%;
   order: 0;
   color: ${(props) => props.theme.secundario};
   font-size: 2.8vh;
@@ -124,9 +117,6 @@ const ContentViewDescription = styled.div`
   @media ${devices.tablet} {
     width: 80%;
     padding: 25px 0 0 0;
-  }
-
-  @media ${devices.laptop} {
   }
 `;
 
@@ -177,19 +167,20 @@ const Description = styled.div`
 `;
 
 const ButtonLink = styled(Placa)`
-  background-image: linear-gradient( 109.6deg,  #33a8ec 11.2%, #186be7 91.1% );
-  color: ${props => props.theme.secundario};
+  background-image: linear-gradient(109.6deg, #33a8ec 11.2%, #186be7 91.1%);
+  color: ${(props) => props.theme.secundario};
 `;
 
 const NavLinkDeleteStyles = styled(NavLink)`
   color: none !important;
   text-decoration: none !important;
-`
+`;
 
 const ContainerFrontPage = styled.div`
   position: relative;
   right: 0;
   width: 100%;
+
   order: 2;
 
   &::before {
@@ -218,6 +209,18 @@ const ContainerFrontPage = styled.div`
     @media ${devices.laptop} {
     }
   }
+
+  @media ${devices.mobileS} {
+    height: 50%;
+  }
+
+  @media ${devices.tablet} {
+    height: 50%;
+  }
+
+  @media ${devices.tablet} {
+    height: 100%;
+  }
 `;
 
 const Img = styled.img`
@@ -228,11 +231,10 @@ const Img = styled.img`
 
 const GridBooks = styled.div`
   position: relative;
-  top: -8vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: 100%;
-  gap: 3vh;
+  gap: 2px;
   z-index: 90;
 
   @media ${devices.mobileS} {
@@ -404,15 +406,15 @@ const VerMas = styled.div`
 `;
 
 const Pagination = styled.div`
+  padding: 15px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 1.5vh;
+  gap: 10px;
   align-items: center;
 `;
 
 const FlexColumnInPhone = styled.div`
-
   width: 100%;
 
   @media ${devices.mobileS} {
@@ -423,7 +425,6 @@ const FlexColumnInPhone = styled.div`
 
   @media ${devices.tablet} {
     gap: 5px;
-    padding-bottom: 20px;
   }
 `;
 
@@ -431,7 +432,7 @@ const Authors = styled.div`
   font-size: 2.5vh;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding:0 ;
+  padding: 0;
 
   @media ${devices.mobileS} {
     width: 100%;
@@ -446,8 +447,15 @@ const Authors = styled.div`
     text-overflow: ellipsis;
     overflow: hidden;
   }
+`;
+
+const ScrollTop = styled.div`
+  height: 5px;
+  width: 5px;
+  background-color: transparent;
 
 `
+
 
 export const ContentPage = () => {
   const dispatch = useDispatch();
@@ -466,9 +474,14 @@ export const ContentPage = () => {
   const { section, busquedad = "" } = useParams();
 
   useEffect(() => {
-    const variable = scroll === "view-content" && "#view-content";
-
-    if (variable === false || variable === "") return;
+    let variable = ""
+    if(scroll === "view-content") {
+      variable = "#view-content"
+    } else if (scroll === "scrollTop") {
+      variable = "#scrollTop"
+    } else {
+      return
+    }
 
     document.querySelector(variable).scrollIntoView({ behavior: "smooth" });
 
@@ -479,8 +492,10 @@ export const ContentPage = () => {
   let corte_two = 0;
 
   const CortarContenido = (index, index_two) => {
-    var variant =
-      dataFilter.length > 0 ? dataFilter : data[sectionCurrent || section];
+
+    dispatch(setScroll("scrollTop"))
+
+    var variant = dataFilter.length > 0 ? dataFilter : data[sectionCurrent || section];
 
     const numeroInfoCortador = 12;
 
@@ -526,13 +541,14 @@ export const ContentPage = () => {
 
   return (
     <Contenedor dataFilter={dataFilter} displaySearch={displaySearch}>
+      <ScrollTop id="scrollTop"/>
       <Toaster richColors theme="dark" />
       {dataVisualization.image && (
         <ContentView
           id="view-content"
           className="animate__animated animate__fadeInDown"
         >
-          <ContentViewDescription className="a">
+          <ContentViewDescription>
             <ContenedorPlacas>
               <Placa section={wordSeccionTransform(dataVisualization.seccion)}>
                 {dataVisualization.seccion}
@@ -543,7 +559,7 @@ export const ContentPage = () => {
             <Description>{dataVisualization.descripcion}</Description>
 
             <ContenedorPlacas>
-            <NavLinkDeleteStyles  to={dataVisualization.link} target="_blank">
+              <NavLinkDeleteStyles to={dataVisualization.link} target="_blank">
                 <ButtonLink>
                   {dataVisualization.seccion === "Libros"
                     ? "Descargar"
@@ -551,8 +567,6 @@ export const ContentPage = () => {
                 </ButtonLink>
               </NavLinkDeleteStyles>
             </ContenedorPlacas>
-
-
           </ContentViewDescription>
           <ContainerFrontPage>
             <Img src={dataVisualization.image} />
@@ -568,39 +582,48 @@ export const ContentPage = () => {
 
       <GridBooks
         displaySearch={displaySearch}
-        style={{ marginTop: !dataVisualization.image && "8vh" }}
+        style={{ marginTop: dataVisualization.image && "-30px" }}
       >
-        {dataSlice?.map(({ image, descripcion, title, seccion, link, authors }, index) => {
-          return (
-            <CardContainer
-              key={index}
-              id={`card${index}`}
-              onClick={() =>
-                onClickCardContainer({ image, descripcion, title, seccion, link, authors})
-              }
-            >
-              <Card>
-                <CardImagen>
-                  <CardImg src={image} alt={title} />
-                </CardImagen>
+        {dataSlice?.map(
+          ({ image, descripcion, title, seccion, link, authors }, index) => {
+            return (
+              <CardContainer
+                key={index}
+                id={`card${index}`}
+                onClick={() =>
+                  onClickCardContainer({
+                    image,
+                    descripcion,
+                    title,
+                    seccion,
+                    link,
+                    authors,
+                  })
+                }
+              >
+                <Card>
+                  <CardImagen>
+                    <CardImg src={image} alt={title} />
+                  </CardImagen>
 
-                <FlexColumnInPhone>
-                  <CardTitle>{title}</CardTitle>
+                  <FlexColumnInPhone>
+                    <CardTitle>{title}</CardTitle>
 
-                  <CardDescription>{descripcion}</CardDescription>
-                  <VerMas>Ver más...</VerMas>
-                  {dataFilter.length > 0 && (
-                    <ContenedorPlacas>
-                      <Placa section={wordSeccionTransform(seccion)}>
-                        {seccion}
-                      </Placa>
-                    </ContenedorPlacas>
-                  )}
-                </FlexColumnInPhone>
-              </Card>
-            </CardContainer>
-          );
-        })}
+                    <CardDescription>{descripcion}</CardDescription>
+                    <VerMas>Ver más...</VerMas>
+                    {dataFilter.length > 0 && (
+                      <ContenedorPlacas>
+                        <Placa section={wordSeccionTransform(seccion)}>
+                          {seccion}
+                        </Placa>
+                      </ContenedorPlacas>
+                    )}
+                  </FlexColumnInPhone>
+                </Card>
+              </CardContainer>
+            );
+          }
+        )}
       </GridBooks>
 
       <Pagination>{Buttons()}</Pagination>

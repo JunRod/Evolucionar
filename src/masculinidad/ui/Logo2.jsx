@@ -31,12 +31,6 @@ const TaperLineTwo = styled.div`
   height: 5vh;
   width: 40vh;
   top: -23.5vh;
-
-  /* @media ${devices.mobileS} {
-        top: -33px;
-        height: 30px;
-  } */
-
   @media ${devices.tablet} {
     height: 5vh;
     top: -23.5vh;
@@ -47,19 +41,20 @@ const TitleLogo = styled.div`
   z-index: 12;
   position: absolute;
   color: ${(props) => props.theme.primario};
-  letter-spacing: 2vh;
   text-align: center;
-  font-size: 2.7vh;
   font-family: ${(props) => props.theme.fontBlackItalic};
   font-weight: ${(props) => props.theme.weightBlackItalic};
   font-style: ${(props) => props.theme.styleBlackItalic};
 
   @media ${devices.mobileS} {
-    top: 266px;
+    top: 270px;
     font-size: 12px;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
   }
 
+  @media ${devices.mobileM} {
+    top: 275px;
+  }
 
   @media ${devices.laptop} {
     font-size: 12px;

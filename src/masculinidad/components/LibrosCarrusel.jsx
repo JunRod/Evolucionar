@@ -4,30 +4,43 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { setDataSlice, setDataVisualization, setIsHoverCarousel } from "../../store/masculinidad";
+import {
+  setDataSlice,
+  setDataVisualization,
+  setIsHoverCarousel,
+} from "../../store/masculinidad";
 import { useNavigate } from "react-router-dom";
 import { devices } from "../global/valores";
 
 const ConteinerCarousel = styled.div`
-    z-index: 5;
-    position: absolute;
-    width: 100%;
+  z-index: 5;
+  position: absolute;
 
-    button {
-        display: none !important;
-    }
+  button {
+    display: none !important;
+  }
 
-    @media ${devices.mobileS} {
-      top: 60px;
-      width: 70%;
+  @media ${devices.mobileS} {
+    right: 150px;
+    top: 60px;
+    width: 600px;
+  }
+
+  @media ${devices.mobileM} {
+    width: 560px;
   }
 
   @media ${devices.mobileL} {
-    width: 100%;
-    top: 0;
+    width: 900px;
+    top: -55px;
+    right: 10px;
   }
 
-
+  @media ${devices.tablet} {
+    width: 900px;
+    top: 12px;
+    right: 130px;
+  }
 `;
 
 const Imagen = styled.img`
@@ -43,76 +56,70 @@ const Imagen = styled.img`
   @media ${devices.mobileL} {
     height: 150px;
   }
-
-
 `;
 
 export const LibrosCarrusel = () => {
-    const { data } = useSelector((state) => state.masculinidad);
+  const { data } = useSelector((state) => state.masculinidad);
 
-    const [forzedLoading, setForzedLoading] = useState(Date.now());
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const [forzedLoading, setForzedLoading] = useState(Date.now());
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    let dataCarousel = [];
+  let dataCarousel = [];
 
-    for (const key in data) {
-        dataCarousel.push(...data[key].slice(0, 5).filter((object) => object.title !== "Titulo"));
-    }
-
-    const onClickSlice = ({ image, title, seccion, descripcion }) => {
-        dispatch(setDataVisualization({ image, title, seccion, descripcion }));
-
-        const wordConvert = seccion.toLowerCase();
-        dispatch(setDataSlice(data[wordConvert]));
-
-        navigate(`/${wordConvert}/1`);
-    };
-
-    const onHover = () => {
-        dispatch(setIsHoverCarousel(true))
-    }
-    const onHoverExit = () => dispatch(setIsHoverCarousel(false))
-
-    const SlicesCarousel = () => {
-        const slices = dataCarousel.map(
-            ({ image, title, seccion, descripcion }) => (
-                <Imagen
-                    onMouseEnter={onHover}
-                    onMouseLeave={onHoverExit}
-                    onClick={() => onClickSlice({ image, title, seccion, descripcion })}
-                    key={forzedLoading}
-                    src={image}
-                    alt={title}
-                />
-            )
-        );
-        return slices;
-    };
-
-    const settings = {
-        pauseOnHover: false,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 3800,
-        autoplaySpeed: 200,
-        cssEase: "linear",
-        rows: 2,
-    };
-
-    return (
-        <>
-            <ConteinerCarousel
-                key={forzedLoading}
-            >
-                <Slider
-                    {...settings}
-                >
-                    {SlicesCarousel()}
-                </Slider>
-            </ConteinerCarousel>
-        </>
+  for (const key in data) {
+    dataCarousel.push(
+      ...data[key].slice(0, 5).filter((object) => object.title !== "Titulo")
     );
+  }
+
+  const onClickSlice = ({ image, title, seccion, descripcion }) => {
+    dispatch(setDataVisualization({ image, title, seccion, descripcion }));
+
+    const wordConvert = seccion.toLowerCase();
+    dispatch(setDataSlice(data[wordConvert]));
+
+    navigate(`/${wordConvert}/1`);
+  };
+
+  const onHover = () => {
+    dispatch(setIsHoverCarousel(true));
+  };
+  const onHoverExit = () => dispatch(setIsHoverCarousel(false));
+
+  const SlicesCarousel = () => {
+    const slices = dataCarousel.map(
+      ({ image, title, seccion, descripcion }) => (
+        <Imagen
+          onMouseEnter={onHover}
+          onMouseLeave={onHoverExit}
+          onClick={() => onClickSlice({ image, title, seccion, descripcion })}
+          key={forzedLoading}
+          src={image}
+          alt={title}
+        />
+      )
+    );
+    return slices;
+  };
+
+  const settings = {
+    pauseOnHover: false,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 3800,
+    autoplaySpeed: 200,
+    cssEase: "linear",
+    rows: 2,
+  };
+
+  return (
+    <>
+      <ConteinerCarousel key={forzedLoading}>
+        <Slider {...settings}>{SlicesCarousel()}</Slider>
+      </ConteinerCarousel>
+    </>
+  );
 };
