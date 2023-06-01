@@ -12,7 +12,6 @@ import {
   setdisplaySearch,
 } from "../../store/masculinidad";
 import styled from "styled-components";
-import { useEffect } from "react";
 import { devices } from "../global/valores";
 
 const sections = [
@@ -21,7 +20,7 @@ const sections = [
   "twitter",
   "tiktok",
   "telegram",
-  "discord",
+  "aplicaciones",
 ];
 
 const ContainerSearch = styled.div`

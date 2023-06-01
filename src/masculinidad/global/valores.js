@@ -26,7 +26,7 @@ export const theme = {
   libros: "#bac9d8",
   twitter: "#00acee",
   tiktok: "linear-gradient(97deg, rgba(1,1,1,1) 0%, rgba(105,201,208,1) 51%, rgba(238,29,82,1) 100%)",
-  discord: "#5865F2",
+  aplicaciones: "#feb645",
 
   primario: "#04080b",
   secundario: "#bac9d8",

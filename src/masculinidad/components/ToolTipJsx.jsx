@@ -66,6 +66,8 @@ const ContainerTwitter = styled(Link)`
     width: 100%;
     height: 100%;
     color: red;
+    filter: invert(100%)contrast(300%);
+
   }
 
   @media ${devices.mobileS} {
@@ -91,7 +93,7 @@ export const ToolTipJsx = ({ id, item }) => {
       className="example-diff-arrow"
       classNameArrow="example-arrow"
     >
-      <p>Muy pronto!</p>
+      <p>Muy pronto</p>
       <ContainerTwitter to={"https://twitter.com/JuNRod_"} target="_blank">
         <img src={Twitter} alt="Twitter" />
       </ContainerTwitter>

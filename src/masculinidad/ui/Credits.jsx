@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Twitter from "/images/Twitter.svg";
 import Linkedin from "/images/Linkedin.svg";
-import { Link } from "react-router-dom";
+import Love from "/images/Love.svg";
 
 const CreditsContainer = styled.div`
   align-items: center;
@@ -24,12 +25,11 @@ const ContainerSocialMedia = styled.div`
   height: 8vh;
   width: 13vh;
   gap: 1vh;
+`;
 
-  img {
-    height: 100%;
-    width: 100%;
-    filter: invert(100%);
-  }
+const Img = styled.img`
+  height: 30px; /* Aplica directamente el estilo height */
+  width: 30px; /* Aplica directamente el estilo width */
 `;
 
 export const Credits = () => {
@@ -37,17 +37,17 @@ export const Credits = () => {
     <CreditsContainer id="seccion-destino">
       <ContainerSocialMedia>
         <Link to={"https://twitter.com/JuNRod_"} target="_blank">
-          <img src={Twitter} alt="Twitter" />
+          <Img src={Twitter} alt="Twitter" />
         </Link>
         <Link
           link={"linkedin"}
           to={"https://www.linkedin.com/in/junrod/"}
           target="_blank"
         >
-          <img src={Linkedin} alt="Twitter" />
+          <Img src={Linkedin} alt="Twitter" />
         </Link>
       </ContainerSocialMedia>
-      © 2023 | JuNRod
+      <p>© 2023 | Hecho por JuNRod con mucho <Img src={Love} /> </p>
     </CreditsContainer>
   );
 };
