@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { devices } from "../global/valores"
+import { SocialRedes } from "./SocialRedes"
 
 const Title = styled.h3`
     font-family: ${props => props.theme.fontBoldItalic};
@@ -312,7 +313,7 @@ export const Aportadores = ({flag}) => {
                             {flag ? "Fernando Peralta León" : "JuNRod"}
                         </NameOne>
                         {
-                            flag ? <></> : <AportacionesOne>
+                            flag ? < SocialRedes social={true} /> : <AportacionesOne>
                             7 Aportaciones
                         </AportacionesOne> }
                     </DescripcionOne>
