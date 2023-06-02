@@ -39,6 +39,8 @@ const Title = styled.h3`
 `
 
 const PositionsFlex = styled.div`
+    margin-bottom: ${props => props.flag ? "80px" : "0px"};
+
     position: relative;
     display: flex;
     flex-direction: row;
@@ -72,7 +74,10 @@ const PositionsFlex = styled.div`
 `
 
 const PositionOne = styled.div`
-    margin-top: 3vh;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media ${devices.mobileS} {
         order: 1;
@@ -105,8 +110,8 @@ const MarcadorOne = styled.i`
     background-color: ${props => props.theme.primario};
     border-radius: 2vh;
     padding: 1.5vh 2.5vh;
-    top: 5vh;
-    left: 17vh;
+    top: 35px;
+    left: 60px;
 `
 
 const ContainerImgOne = styled.div`
@@ -139,16 +144,27 @@ const NameOne = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    &::after {
-        position: absolute;
-        content: "";
-        padding: 2vh 10vh;
-        background-color: ${props =>  {
+    background-color: ${props =>  {
             if(props.active) return props.theme.secundario
         }};
+    color: ${props =>  {
+            if(props.active) return props.theme.primario
+        }};
+    border-radius: 1vh;
+    width: 180px;
+    line-height: 20px;
+    padding: 8px 0px;
+    font-weight:  ${props =>  {
+            if(props.active) return props => props.theme.weightBoldItalic
+        }};
+    margin-top: ${props =>  {
+            if(props.active) return "10px"
+        }};
+    /* &::after {
+        position: absolute;
+        content: "";
         mix-blend-mode: difference;
-        border-radius: 1vh;
-    }
+    } */
 `
 
 const AportacionesOne = styled.div`
@@ -169,8 +185,9 @@ const MarcadorTwo = styled.i`
     background-color: ${props => props.theme.primario};
     border-radius: 2vh;
     padding: 2vh 3vh;
-    top: 5vh;
-    left: 22vh;
+    top: 35px;
+    left: 70px;
+    
 `
 
 const ContainerImagenTwo = styled.div`
@@ -183,10 +200,15 @@ const ImagenTwo = styled.img`
     height: 100%;
     border-radius: 2vh;
     width: 100%;
+    object-fit: cover;
+    position: absolute;
 `
 
 const PositionThree = styled.div`
-    margin-top: 7vh;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media ${devices.mobileS} {
         margin-top: 0;
@@ -223,8 +245,8 @@ const MarcadorThree = styled.i`
     background-color: ${props => props.theme.primario};
     border-radius: 2vh;
     padding: 1.5vh 2.5vh;
-    top: 4.2vh;
-    left: 13vh;
+    top: 35px;
+    left: 60px;
 `
 
 const ContainerImgThree = styled.div`
@@ -239,68 +261,81 @@ const ImageThree = styled.img`
     width: 100%;
 `
 
+const ContainerMarcadorOne = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 
-export const Aportadores = () => {
+export const Aportadores = ({flag}) => {
     return (
         <>
-            <Title>TOP APORTADORES</Title>
-
-            <PositionsFlex>
+            <Title>{flag ? "PATROCINADORES" : "TOP APORTADORES"}</Title>
+            <PositionsFlex flag={flag}>
                 <PositionOne >
                     <MarcadorOne>2 °</MarcadorOne>
                     <ContainerImgOne >
                         <ImageOne
-                            src="/images/photo2.png" 
+                            src={flag ? "/images/brandon.png" : "/images/photo2.png" }
                             alt="photo2.jpg"
                         />
                     </ContainerImgOne>
                     <DescripcionOne >
                         <NameOne>
-                            Steve Jobs
+                            {flag ? "Brandon Rojas" : "Steve Jobs"}
                         </NameOne>
-                        <AportacionesOne>
+
+                        {
+                            flag ? <></>: 
+                            <AportacionesOne>
                             7 Aportaciones
                         </AportacionesOne>
+                        }
+                        
                     </DescripcionOne>
                 </PositionOne>
 
-                <div>
+                <ContainerMarcadorOne>
                     <MarcadorTwo>
                         1 °
                     </MarcadorTwo>
                     <ContainerImagenTwo>
                         <ImagenTwo
                             className="image_one"
-                            src="/images/photo1.png" alt="photo1.jpg"
+                            src={flag ? "/images/compa.svg" : "/images/photo1.png" }
+                            alt="photo1.jpg"
                         />
                     </ContainerImagenTwo>
                     <DescripcionOne>
                         <NameOne
                              active={true}
                         >
-                            JuNRod
+                            {flag ? "Fernando Peralta León" : "JuNRod"}
                         </NameOne>
-                        <AportacionesOne>
+                        {
+                            flag ? <></> : <AportacionesOne>
                             7 Aportaciones
-                        </AportacionesOne>
+                        </AportacionesOne> }
                     </DescripcionOne>
-                </div>
-
+                </ContainerMarcadorOne>
+                
                 <PositionThree>
                     <MarcadorThree>3 °</MarcadorThree>
                     <ContainerImgThree>
                         <ImageThree 
-                        src="/images/photo3.jpg" alt="photo3.jpg"
+                        src={flag ? "/images/yokze.png" : "/images/photo3.jpg" }
                          />
                     </ContainerImgThree>
 
                     <DescripcionOne>
                         <NameOne >
-                            Bill Gates
+                            {flag ? "Ángel Rodriguez" : "Rosweell"}
                         </NameOne>
-                        <AportacionesOne>
+                        {
+                            flag ? <></> : <AportacionesOne>
                             4 Aportaciones
                         </AportacionesOne>
+                        }
                     </DescripcionOne>
                 </PositionThree>
             </PositionsFlex>

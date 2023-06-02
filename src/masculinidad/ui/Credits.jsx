@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Twitter from "/images/Twitter.svg";
 import Linkedin from "/images/Linkedin.svg";
 import Love from "/images/Love.svg";
+import { devices } from "../global/valores";
 
 const CreditsContainer = styled.div`
   align-items: center;
@@ -32,6 +33,18 @@ const Img = styled.img`
   width: 30px; /* Aplica directamente el estilo width */
 `;
 
+const Letras = styled.div`
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+  
+  @media ${devices.tablet} {
+    display: flex;
+  flex-direction: row;
+  }
+`
+
 export const Credits = () => {
   return (
     <CreditsContainer id="seccion-destino">
@@ -47,7 +60,8 @@ export const Credits = () => {
           <Img src={Linkedin} alt="Twitter" />
         </Link>
       </ContainerSocialMedia>
-      <p>© 2023 | Hecho por JuNRod con mucho <Img src={Love} /> </p>
+      <Letras>© 2023 | Por JuNRod con mucho <Img src={Love} /> </Letras>
     </CreditsContainer>
   );
 };
+
