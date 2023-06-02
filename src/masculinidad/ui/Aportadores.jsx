@@ -15,7 +15,6 @@ const Title = styled.h3`
     font-size: 20px;
     text-align: center;
     word-wrap: break-word;
-    width: 320px;
     letter-spacing: 1.7vh;
   }
   

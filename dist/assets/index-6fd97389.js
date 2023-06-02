@@ -746,7 +746,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     font-size: 20px;
     text-align: center;
     word-wrap: break-word;
-    width: 320px;
     letter-spacing: 1.7vh;
   }
   
