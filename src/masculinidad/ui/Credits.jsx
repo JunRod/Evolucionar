@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Twitter from "/images/Twitter.svg";
+import Twitter from "/images/twitter.svg";
 import Linkedin from "/images/Linkedin.svg";
 import Love from "/images/Love.svg";
 import { devices } from "../global/valores";
@@ -23,8 +23,6 @@ const CreditsContainer = styled.div`
 const ContainerSocialMedia = styled.div`
   display: flex;
   flex-direction: row;
-  height: 8vh;
-  width: 13vh;
   gap: 1vh;
 `;
 
@@ -51,13 +49,6 @@ export const Credits = () => {
       <ContainerSocialMedia>
         <Link to={"https://twitter.com/JuNRod_"} target="_blank">
           <Img src={Twitter} alt="Twitter" />
-        </Link>
-        <Link
-          link={"linkedin"}
-          to={"https://www.linkedin.com/in/junrod/"}
-          target="_blank"
-        >
-          <Img src={Linkedin} alt="Twitter" />
         </Link>
       </ContainerSocialMedia>
       <Letras>© 2023 | Por JuNRod con mucho <Img src={Love} /> </Letras>

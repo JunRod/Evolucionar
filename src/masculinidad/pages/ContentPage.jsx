@@ -1,5 +1,4 @@
-import { useMemo } from "react";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { NavLink,useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Toaster } from "sonner";
 import styled, { css } from "styled-components";
@@ -10,6 +9,7 @@ import {
 } from "../../store/masculinidad";
 import { useEffect } from "react";
 import { devices } from "../global/valores";
+import { Sponsors } from "../components/Sponsors";
 
 const Contenedor = styled.div`
   background-color: ${(props) => props.theme.primario};
@@ -17,6 +17,8 @@ const Contenedor = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  padding: 55px 15px;
+  gap: 25px;
 
   height: ${(props) => {
     if (props.displaySearch) {
@@ -26,13 +28,6 @@ const Contenedor = styled.div`
     }
   }};
 
-  @media ${devices.mobileS} {
-    padding: 55px 10px 10px 10px;
-  }
-
-  @media ${devices.laptop} {
-    padding: 55px 10px 10px 10px;
-  }
 `;
 
 const MessageDataSliceEmpty = styled.div`
@@ -70,13 +65,8 @@ const Button = styled(NavLink)`
 `;
 
 const ContentView = styled.div`
-  padding: 10px;
-  position: relative;
-  display: flex;
-  flex-direction: row;
 
   @media ${devices.mobileS} {
-    height: 700px;
     display: flex;
     flex-direction: column;
   }
@@ -85,20 +75,13 @@ const ContentView = styled.div`
     height: 400px;
     flex-direction: row;
   }
-
-  @media ${devices.laptop} {
-    height: 60vh;
-    margin-top: 0;
-  }
 `;
 
 const ContentViewDescription = styled.div`
   display: flex;
   flex-direction: column;
-  background-size: 80vh 130vh;
   z-index: 5;
   position: relative;
-  width: 40%;
   order: 0;
   color: ${(props) => props.theme.secundario};
   font-size: 2.8vh;
@@ -106,16 +89,14 @@ const ContentViewDescription = styled.div`
   font-weight: ${(props) => props.theme.weightRegular};
   font-style: ${(props) => props.theme.styleRegular};
   gap: 5px;
-  padding-bottom: 30px;
 
   @media ${devices.mobileS} {
-    margin-bottom: 20px;
     width: 100%;
-    padding: 0;
+    margin-bottom: 15px;
   }
 
   @media ${devices.tablet} {
-    width: 80%;
+    margin-bottom: 0px;
     padding: 25px 0 0 0;
   }
 `;
@@ -147,22 +128,15 @@ const Title = styled.div`
 const Description = styled.div`
   font-size: 2.5vh;
   text-overflow: ellipsis;
-  overflow: hidden;
+  overflow: scroll;
 
   @media ${devices.mobileS} {
     width: 100%;
-    height: 130px;
-    max-height: 160px;
-    text-overflow: ellipsis;
-    overflow: scroll;
+    max-height: 200px;
   }
 
   @media ${devices.tablet} {
-    width: 100%;
-    height: 200px;
-    max-height: 160px;
-    text-overflow: ellipsis;
-    overflow: scroll;
+    width: 90%;
   }
 `;
 
@@ -180,7 +154,6 @@ const ContainerFrontPage = styled.div`
   position: relative;
   right: 0;
   width: 100%;
-
   order: 2;
 
   &::before {
@@ -206,21 +179,27 @@ const ContainerFrontPage = styled.div`
         inset 9vh -11vh 10vh -4vh ${(props) => props.theme.primario};
     }
 
-    @media ${devices.laptop} {
-    }
   }
 
   @media ${devices.mobileS} {
     height: 50%;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileL} {
+    height: 60%;
+    width: 60%;
+  }
+
+  @media ${devices.mobileXL} {
     height: 50%;
+    width: 50%;
   }
 
   @media ${devices.tablet} {
     height: 100%;
+    width: 100%;
   }
+
 `;
 
 const Img = styled.img`
@@ -233,34 +212,42 @@ const GridBooks = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  height: 100%;
-  gap: 2px;
+  gap: 10px;
   z-index: 90;
 
   @media ${devices.mobileS} {
     grid-template-columns: repeat(1, 1fr);
     display: grid;
-    padding: ${(props) =>
-      props.displaySearch ? "80px 0 0 0 !important" : "0"};
+
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileXL} {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  @media ${devices.tablet} {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media ${devices.laptop} {
     grid-template-columns: repeat(4, 1fr);
-    padding: 0 !important;
+
+  }
+
+  @media ${devices.laptopL} {
+    grid-template-columns: repeat(5, 1fr);
+
   }
 `;
 
 const CardContainer = styled.div`
   cursor: pointer;
   width: 100%;
-  height: 100%;
   color: #fff;
   text-align: center;
   position: relative;
+  height: 100%;
 
   :before {
     content: "";
@@ -299,8 +286,8 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1vh;
-  justify-content: center;
   align-items: center;
+  height: 100%;
 
   :hover::before {
     z-index: 40;
@@ -340,24 +327,27 @@ const Card = styled.div`
     flex-direction: row;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobileXL} {
     flex-direction: column;
   }
 `;
 
 const CardImagen = styled.div`
-  height: 30vh;
+  position: relative;
+  height: 200px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-grow: 2;
+  align-self: flex-start;
 `;
 
 const CardImg = styled.img`
+  position: absolute;
   border-radius: 10px;
   height: 100%;
   width: 100%;
+  object-fit: fill;
 `;
 
 const CardTitle = styled.div`
@@ -377,7 +367,7 @@ const CardDescription = styled.div`
   font-weight: ${(props) => props.theme.weightRegular};
   font-style: ${(props) => props.theme.styleRegular};
   color: ${(props) => props.theme.secundario};
-  height: 17vh;
+  height: 70px;
   overflow: hidden;
   text-overflow: ellipsis;
 `;
@@ -430,30 +420,30 @@ const FlexColumnInPhone = styled.div`
 
 const Authors = styled.div`
   font-size: 2.5vh;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  padding: 0;
 
   @media ${devices.mobileS} {
     width: 100%;
-    max-height: 160px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  @media ${devices.tablet} {
-    width: 100%;
-    max-height: 160px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    height: auto;
   }
 `;
 
 const ScrollTop = styled.div`
-  height: 5px;
-  width: 5px;
-  background-color: transparent;
+  height: 0px;
+  width: 0px;
+`
 
+const ContainerImgCenter = styled.div`
+  /* display:flex;
+  justify-content: center;
+  background-repeat: red;
+  width: 100%;
+  align-items: center;
+
+  @media ${devices.tablet} {s
+    display: inline;
+    width: 100%;
+    height: 100%;
+  } */
 `
 
 
@@ -573,6 +563,8 @@ export const ContentPage = () => {
           </ContainerFrontPage>
         </ContentView>
       )}
+      
+      <Sponsors />
 
       {MessageAfterClickOnSearch.length > 0 && (
         <MessageDataSliceEmpty>
@@ -582,7 +574,6 @@ export const ContentPage = () => {
 
       <GridBooks
         displaySearch={displaySearch}
-        style={{ marginTop: dataVisualization.image && "-30px" }}
       >
         {dataSlice?.map(
           ({ image, descripcion, title, seccion, link, authors }, index) => {

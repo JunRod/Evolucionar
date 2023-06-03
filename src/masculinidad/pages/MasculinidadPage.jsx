@@ -130,7 +130,6 @@ export const MasculinidadPage = () => {
 
       <WindowThree id="my-tooltip" data-tooltip-delay-hide={10000}>
         <ToolTipJsx id={"my-tooltip"} item={"three"} />
-        <Aportadores flag={true}/>
         <Aportadores />
 
         <AportarContainer id="seccion-aportar">

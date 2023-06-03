@@ -38,8 +38,8 @@ const ConteinerCarousel = styled.div`
 
   @media ${devices.tablet} {
     width: 900px;
-    top: 12px;
-    right: 130px;
+    top: 60px;
+    right: 140px;
   }
 `;
 

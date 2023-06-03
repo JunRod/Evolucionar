@@ -31,19 +31,19 @@ export const theme = {
   primario: "#04080b",
   secundario: "#bac9d8",
 
-  fontRegular: "Satoshi Regular, sans-serif",
+  fontRegular: "Satoshi",
   styleRegular: "normal",
   weightRegular: "normal",
 
-  fontMediumItalic: "Satoshi Medium Italic, sans-serif",
+  fontMediumItalic: "Satoshi",
   styleMediumItalic: "italic",
   weightMediumItalic: 500,
 
-  fontBoldItalic: "Satoshi Bold Italic, sans-serif",
+  fontBoldItalic: "Satoshi",
   styleBoldItalic: "italic",
-  weightBoldItalic: "bold",
+  weightBoldItalic: 700,
 
-  fontBlackItalic: "Satoshi Black Italic, sans-serif",
+  fontBlackItalic: "Satoshi",
   styleBlackItalic: "italic",
   weightBlackItalic: 900,
 };

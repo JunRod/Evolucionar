@@ -113,7 +113,7 @@ const WordsAmante = styled(WordsRey)`
 
 const Eyes1 = styled.img`
   position: absolute;
-  filter: blur(0.5vh);
+  filter: blur(3px);
   mix-blend-mode: color-dodge;
   height: 10%;
   width: 25%;
@@ -125,7 +125,7 @@ const Eyes1 = styled.img`
 const Circle2 = styled.img`
   mix-blend-mode: overlay;
   position: absolute;
-  background-color: white;
+  background-color: #ffffff;
   height: 10%;
   width: 20%;
   bottom: 22%;
@@ -164,7 +164,7 @@ const Circle4 = styled.img`
 const Circle5 = styled.img`
   mix-blend-mode: overlay;
   position: absolute;
-  background-color: white;
+  background-color: #ffffff;
   z-index: 40;
   height: 15%;
   width: 20%;
@@ -178,7 +178,7 @@ const Circle5 = styled.img`
 const Circle6 = styled.img`
   mix-blend-mode: overlay;
   position: absolute;
-  background-color: #c7d6e4;
+  background-color: #d4e6f7;
   height: 28%;
   width: 26%;
   z-index: 20;
@@ -191,7 +191,7 @@ const Circle6 = styled.img`
 const Circle7 = styled.div`
   mix-blend-mode: overlay;
   position: absolute;
-  background-color: #c7d6e4;
+  background-color: #d4e6f7;
   height: 28%;
   width: 26%;
   z-index: 20;
@@ -276,13 +276,6 @@ const Circle10 = styled.div`
     display: flex;
   }
 
-  @media ${devices.laptop} {
-    display: flex;
-  }
-
-  @media ${devices.laptopL} {
-    display: flex;
-  }
 `;
 
 const AvatarContainer = styled.div`
@@ -365,6 +358,9 @@ export const AvatarAlfa = () => {
         <WordsAmante />
       </WordsRey>
 
+      <Eyes1 style={{
+        filter: "blur(20px)"
+      }} src={Vector2} className="objectsParallax" data-value="1" />
       <Eyes1 src={Vector2} className="objectsParallax" data-value="1" />
 
       <GradientAvatar />

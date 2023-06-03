@@ -1,7 +1,6 @@
 import { Tooltip } from "react-tooltip";
 import { Link } from "react-router-dom";
-import Twitter from "/images/Twitter.svg";
-import Linkedin from "/images/Linkedin.svg";
+import Twitter from "/images/twitter.svg";
 import styled from "styled-components";
 import { devices } from "../global/valores";
 
@@ -9,9 +8,8 @@ const Toltip = styled(Tooltip)`
   letter-spacing: normal;
   z-index: 10;
   position: ${(props) => (props.item === "three" ? "sticky" : "absolute")};
-  margin-bottom: 20vh;
   transition: all 0.5s ease;
-  height: 100%;
+  height: 120px;
   font-size: 3vh;
   font-family: ${(props) => props.theme.fontMediumItalic};
   font-weight: ${(props) => props.theme.weightMediumItalic};
@@ -48,9 +46,8 @@ const ContainerTwitter = styled(Link)`
     display: none;
     padding: 1vh;
     position: relative;
-    content: "Sígueme!";
+    content: "Sígueme;)";
     height: 1vh;
-    width: 100%;
 
     @media ${devices.mobileS} {
       padding: 0px;
@@ -78,11 +75,6 @@ const ContainerTwitter = styled(Link)`
   }
 `;
 
-const ContainerLinkedin = styled(ContainerTwitter)`
-  :after {
-    content: "Conectemos!";
-  }
-`;
 
 export const ToolTipJsx = ({ id, item }) => {
   return (
@@ -97,13 +89,6 @@ export const ToolTipJsx = ({ id, item }) => {
       <ContainerTwitter to={"https://twitter.com/JuNRod_"} target="_blank">
         <img src={Twitter} alt="Twitter" />
       </ContainerTwitter>
-      <ContainerLinkedin
-        link={"linkedin"}
-        to={"https://www.linkedin.com/in/junrod/"}
-        target="_blank"
-      >
-        <img src={Linkedin} alt="Twitter" />
-      </ContainerLinkedin>
     </Toltip>
   );
 };

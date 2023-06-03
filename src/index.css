@@ -3,8 +3,8 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #bac9d8;
-    border-radius: 1vh;
+  background-color: #bac9d8;
+  border-radius: 1vh;
 }
 
 *::-webkit-scrollbar {
@@ -26,7 +26,8 @@ body {
   color: #04080b;
 }
 
-body, html {
+body,
+html {
   scroll-behavior: smooth;
 }
 
@@ -41,9 +42,6 @@ html {
   box-sizing: inherit;
 }
 
-
-   * {
-    scroll-padding-top: 55px;
-   }
-
-
+* {
+  scroll-padding-top: 55px;
+}

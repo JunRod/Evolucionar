@@ -8,13 +8,12 @@ const LogoContainer = styled.div`
   z-index: ${(props) => (props.isHoverLogo ? 2 : 9)};
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 120%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(3px);
-
   @media ${devices.mobileS} {
     right: -11px;
   }
@@ -30,11 +29,11 @@ const LogoContainer = styled.div`
   }
 
   @media ${devices.laptop} {
-    right: 0px;
   }
 `;
 
 const Title = styled.div`
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   font-family: ${(props) => props.theme.fontBoldItalic};
   font-weight: ${(props) => props.theme.weightBoldItalic};
   font-style: ${(props) => props.theme.styleBoldItalic};
@@ -55,21 +54,21 @@ const Title = styled.div`
 
   @media ${devices.mobileL} {
     font-size: 58px;
-    top: -25px;
+    top: -55px;
   }
 
   @media ${devices.tablet} {
     font-size: 78px;
-    top: -25px;
   }
 
   @media ${devices.laptop} {
     font-size: 115px;
-    top: 0px;
+    top: -30px;
   }
 `;
 
 const TitleRecursos = styled.div`
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   position: relative;
   font-family: ${(props) => props.theme.fontBoldItalic};
   font-weight: ${(props) => props.theme.weightBoldItalic};
@@ -108,6 +107,7 @@ const TitleRecursos = styled.div`
 `;
 
 const Circulo = styled.div`
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.479);
   z-index: 30;
   position: relative;
   background-color: ${(props) => props.theme.primario};
@@ -129,7 +129,7 @@ const Circulo = styled.div`
   @media ${devices.mobileL} {
     height: 25px;
     width: 25px;
-    top: -15px;
+    top: -50px;
     left: 195px;
     border: 5px solid ${(props) => props.theme.secundario};
   }
@@ -137,13 +137,13 @@ const Circulo = styled.div`
   @media ${devices.tablet} {
     height: 25px;
     width: 25px;
-    top: -45px;
+    top: -70px;
     left: 275px;
     border: 6px solid ${(props) => props.theme.secundario};
   }
 
   @media ${devices.laptop} {
-    top: 0px;
+    top: -30px;
     left: 365px;
     height: 40px;
     width: 40px;
@@ -152,6 +152,8 @@ const Circulo = styled.div`
 `;
 
 const Circulo2 = styled(Circulo)`
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.479);
+
   top: 230px;
   left: -360px;
   @media ${devices.mobileS} {
@@ -160,8 +162,8 @@ const Circulo2 = styled(Circulo)`
   }
 
   @media ${devices.mobileL} {
-    left: -200px;
-    top: 110px;
+    left: -150px;
+    top: 90px;
   }
 
   @media ${devices.tablet} {
@@ -170,8 +172,8 @@ const Circulo2 = styled(Circulo)`
   }
 
   @media ${devices.laptop} {
-    left: -370px;
-    top: 255px;
+    left: -360px;
+    top: 225px;
   }
 
 `;
