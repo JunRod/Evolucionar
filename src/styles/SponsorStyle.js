@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "../masculinidad/global/valores";
+import { devices } from "../masculinidad/../styles/valores";
 
 export const ContainerArticle = styled.article`
   display: flex;
@@ -71,14 +71,12 @@ export const TitleArtitle = styled.h3`
   font-weight: ${(props) => props.theme.weightMediumItalic};
   font-family: ${(props) => props.theme.fontMediumItalic};
   font-style: ${(props) => props.theme.styleMediumItalic};
-
   
   @media ${devices.tablet} {
     flex-direction: row;
     justify-content: space-between;
     align-self: flex-start;
   }
-
 `;
 
 export const FeaturedArticle = styled.span`
@@ -87,7 +85,6 @@ export const FeaturedArticle = styled.span`
   border-radius: 5px;
   padding: 3px;
   font-size: 15px;
-
 `;
 
 export const DescriptionArticle = styled.div`

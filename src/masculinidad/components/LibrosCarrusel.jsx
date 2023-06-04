@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,53 +9,7 @@ import {
   setIsHoverCarousel,
 } from "../../store/masculinidad";
 import { useNavigate } from "react-router-dom";
-import { devices } from "../global/valores";
-
-const ConteinerCarousel = styled.div`
-  z-index: 5;
-  position: absolute;
-
-  button {
-    display: none !important;
-  }
-
-  @media ${devices.mobileS} {
-    right: 150px;
-    top: 60px;
-    width: 600px;
-  }
-
-  @media ${devices.mobileM} {
-    width: 560px;
-  }
-
-  @media ${devices.mobileL} {
-    width: 900px;
-    top: -55px;
-    right: 10px;
-  }
-
-  @media ${devices.tablet} {
-    width: 900px;
-    top: 60px;
-    right: 140px;
-  }
-`;
-
-const Imagen = styled.img`
-  padding-left: 2vh;
-  cursor: pointer;
-  clip-path: inset(8% 0% 3% 0%);
-  height: 150px;
-
-  @media ${devices.mobileS} {
-    height: 100px;
-  }
-
-  @media ${devices.mobileL} {
-    height: 150px;
-  }
-`;
+import { ConteinerCarousel, Imagen } from "../../styles/LibrosCarruselStyles";
 
 export const LibrosCarrusel = () => {
   const { data } = useSelector((state) => state.masculinidad);

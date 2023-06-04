@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { devices } from "../global/valores"
+import { devices } from "../../styles/valores"
 import { SocialRedes } from "./SocialRedes"
 
 const Title = styled.h3`

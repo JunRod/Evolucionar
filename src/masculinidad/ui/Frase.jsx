@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import styled, { css } from "styled-components";
-import { devices } from "../global/valores";
+import { devices } from "../../styles/valores";
 
 const phrases = [
   "Recursos sobre masculinidad seleccionados cuidadosamente y recopilados en una sola web <div>Incluye recursos traducidos de otros idiomas al español</div>",

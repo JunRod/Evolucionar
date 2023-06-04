@@ -5,7 +5,7 @@ import "react-tooltip/dist/react-tooltip.css";
 import { LibrosCarrusel, Aportar } from "../components";
 import { Logo, Aportadores, AvatarAlfa, Credits, Frase, Logo2 } from "../ui";
 import { ToolTipJsx } from "../components/ToolTipJsx";
-import { devices, theme } from "../global/valores.js";
+import { devices, theme } from "../../styles/valores.js";
 
 const WindowOne = styled.div`
   position: relative;

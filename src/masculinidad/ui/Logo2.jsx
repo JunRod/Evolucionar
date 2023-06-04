@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "../global/valores";
+import { devices } from "../../styles/valores";
 
 const LineTwo = styled.div`
   border: 0.7vh solid ${(props) => props.theme.primario};

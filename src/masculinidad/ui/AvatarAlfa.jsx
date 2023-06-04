@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Vector2 from "/images//VectorEyes2.svg";
 import Vector3 from "/images/Circle2.svg";
-import { devices } from "../global/valores";
+import { devices } from "../../styles/valores";
 // import {} from "../../../public/images/Avatar.png"
 
 const Avatar = styled.img`

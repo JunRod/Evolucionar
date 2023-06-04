@@ -12,7 +12,8 @@ const initialState = {
   MessageAfterClickOnSearch: "",
   sectionCurrent: "",
   isHoverLogo: false,
-  isHoverCarousel: false
+  isHoverCarousel: false,
+  sponsor: true
 };
 
 export const masculinidadSlice = createSlice({
@@ -52,6 +53,9 @@ export const masculinidadSlice = createSlice({
     setIsHoverCarousel: (state, { payload }) => {
       state.isHoverCarousel = payload;
     },
+    setSponsor: (state, { payload }) => {
+      state.sponsor = payload;
+    },
   },
 });
 
@@ -69,5 +73,6 @@ export const {
   setMessageAfterClickOnSearch,
   setSectionCurrent,
   setIsHoverLogo,
-  setIsHoverCarousel
+  setIsHoverCarousel,
+  setSponsor
 } = masculinidadSlice.actions;

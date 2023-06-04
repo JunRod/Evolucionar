@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Twitter from "/images/twitter.svg";
 import Linkedin from "/images/Linkedin.svg";
 import Love from "/images/Love.svg";
-import { devices } from "../global/valores";
+import { devices } from "../../styles/valores";
 
 const CreditsContainer = styled.div`
   align-items: center;

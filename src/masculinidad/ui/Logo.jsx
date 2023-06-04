@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled, { css } from "styled-components";
 import { setIsHoverLogo } from "../../store/masculinidad";
-import { devices } from "../global/valores";
+import { devices } from "../../styles/valores";
 
 const LogoContainer = styled.div`
   z-index: ${(props) => (props.isHoverLogo ? 2 : 9)};
