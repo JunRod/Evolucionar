@@ -137,6 +137,14 @@ export const dataBackend = {
     },
     {
       seccion: "YouTube",
+      image: "/images/dc.jpg",
+      title: "Daniel Castrejón",
+      descripcion:
+        "Busco ayudar a crecer a esta generación de hombres que está por venir. Si estás interesado en lo mismo puedes seguirme para ser parte de la comunidad que estoy creando. Yo puedo ayudarte a dar el cambio en tu vida que tú estás esperando.",
+      link: "https://www.youtube.com/@danypcastrejon",
+    },
+    {
+      seccion: "YouTube",
       image: "/images/mimejoryo.jpg",
       title: "Mi Mejor Yo ",
       descripcion:
