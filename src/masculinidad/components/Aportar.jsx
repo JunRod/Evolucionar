@@ -1,7 +1,7 @@
 import { DropFiles } from "./DropFiles"
 import { useDispatch, useSelector } from "react-redux";
 import { setOnButtonsContruibuitors } from "../../store/masculinidad";
-import { Button, ButtonSend, DescripcionInput, FlexInput, Icon, Input, InputButtonLeft, Title } from '../../styles/AportarStyles';
+import { Button, ButtonSend, DescripcionInput, FlexInput, Icon, Input, InputButtonLeft, InputLink, Title } from '../../styles/AportarStyles';
 
 
 export const Aportar = () => {
