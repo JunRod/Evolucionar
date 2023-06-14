@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.container {
+  background-color: rgb(59, 59, 59);
+  height: 100%;
+}
+
+.preview {
+  background-color: rgb(36, 36, 36);
+}
+
+.preview img {
+  height: 200px;
+  width: 200px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contenedorJSON {
+  background-color: rgb(36, 36, 36);
+}
+
+pre {
+  width: 900px;
+}
