@@ -1,0 +1,17 @@
+- Hacer los ojos del avatar mas brillantes.
+
+cuando busco Soaring no sale nada, pero si busco soaring si sale.
+darle un padding a descatados en celular
+borrar libros que no sirven.
+
+
+para que no piensen que estan solos en la web => poner descargas de cada libro
+
+cuando estas a la cabeza de algo, es importante saber defenderse y debatir porque todo cae en tu responsabilidad
+
+Una entrevista es un storytelling. El que cuente las mejores historias gana. 
+
+Error -> Cuando entro al contenido desde el carrusel, me manda todos el contenido de la sección, desaparece el paginador
+Cuando voy a la siguiente page de cada seccion, el apartado de la sección deja de aparecer.
+
+
