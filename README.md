@@ -27,7 +27,7 @@ No busques más! Encuentralo todo en una web.
 - React Redux
 - Sonner
 
-## ![UI en Figma](https://www.figma.com/file/zUIUfjoWRbwQ7P1d0C4W23/Masculinidad?type=design&t=N8pgZwpoSTB7MWwE-6)
+## [UI en Figma](https://www.figma.com/file/zUIUfjoWRbwQ7P1d0C4W23/Masculinidad?type=design&t=N8pgZwpoSTB7MWwE-6)
 
 ## Analíticas Web
 ![image](https://github.com/JunRod/Masculinidad/assets/87834204/a2b40ea1-48f7-474d-9ca4-c95868131f8c)
