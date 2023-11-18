@@ -10,12 +10,6 @@ La tecnología ha aumentado las virtudes y los vicios de los seres humanos; Los 
 
 No busques más! Encuentralo todo en una web.
 
-## Funcionalidades Principales:
-- Acceder rápidamente al contenido haciendo click en el casusel de la página principal.
-- Buscar entre todo el contenido; Cada resultado aparece junto a la sección que pertenece.
-- Paginador, te lleva arriba en cuanto cambias de página.
-- Enlace directo para visitar el contenido seleccionado.
-
 ## Tecnologías
 - React
 - React Router
