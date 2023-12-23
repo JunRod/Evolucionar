@@ -401,7 +401,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   @media ${G.laptopL} {
     font-size: 20px;
   }
-`,TO=()=>{const e=wr();return K(OO,{to:"/",onClick:()=>{e(il("")),e(Ro("principal")),e(zl([])),e(Xi([])),e(lp(!1)),e(Qi({}))},children:K(PO,{children:"MASCULINIDAD"})})},$O=te.div`
+`,TO=()=>{const e=wr();return K(OO,{to:"/",onClick:()=>{e(il("")),e(Ro("principal")),e(zl([])),e(Xi([])),e(lp(!1)),e(Qi({}))},children:K(PO,{children:"EVOLUCIONAR"})})},$O=te.div`
   gap: 8px;
   display: flex;
   align-items: center;
@@ -1522,7 +1522,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   @media ${G.laptop} {
     -webkit-mask-position: 120px -348px;
   }
-`,$P=()=>{const e=wr(),{isHoverLogo:t,isHoverCarousel:n}=yr(i=>i.masculinidad),r=()=>e(nm(!0));return V.useEffect(()=>{n||e(nm(!1))},[n]),Le(kP,{onMouseEnter:r,isHoverLogo:t,className:`animate__animated animate__faster ${t?"animate__fadeOut":"animate__fadeIn"} `,children:[K(G1,{}),K(PP,{}),K(K1,{}),K(TP,{}),Le(_P,{children:["MASCUL",K(OP,{children:"RECURSOS"}),"NIDAD"]})]})},RP=te.div`
+`,$P=()=>{const e=wr(),{isHoverLogo:t,isHoverCarousel:n}=yr(i=>i.masculinidad),r=()=>e(nm(!0));return V.useEffect(()=>{n||e(nm(!1))},[n]),Le(kP,{onMouseEnter:r,isHoverLogo:t,className:`animate__animated animate__faster ${t?"animate__fadeOut":"animate__fadeIn"} `,children:[K(G1,{}),K(PP,{}),K(K1,{}),K(TP,{}),Le(_P,{children:["EVOLUC",K(OP,{children:"RECURSOS"}),"ONAR"]})]})},RP=te.div`
   border: 0.7vh solid ${e=>e.theme.primario};
   width: 15vh;
   height: 40vh;
