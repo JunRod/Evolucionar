@@ -16,7 +16,7 @@ export const Logo = () => {
 
   return (
     <LogoNavbar to={"/"} onClick={onClickLogo}>
-      <Title>MASCULINIDAD</Title>
+      <Title>EVOLUCIONAR</Title>
     </LogoNavbar>
   );
 };

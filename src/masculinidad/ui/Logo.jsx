@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { setIsHoverLogo } from "../../store/masculinidad";
 import { devices } from "../../styles/valores";
 
@@ -274,7 +274,7 @@ export const Logo = () => {
       <Line />
       <Line2 />
       <Title>
-        MASCUL<TitleRecursos>RECURSOS</TitleRecursos>NIDAD
+        EVOLUC<TitleRecursos>RECURSOS</TitleRecursos>ONAR
       </Title>
     </LogoContainer>
   );
