@@ -2,14 +2,13 @@ import styled from "styled-components";
 import Vector2 from "/images//VectorEyes2.svg";
 import Vector3 from "/images/Circle2.svg";
 import { devices } from "../../styles/valores";
-// import {} from "../../../public/images/Avatar.png"
 
 const Avatar = styled.img`
   z-index: 10;
   position: absolute;
   height: 100%;
   width: 100%;
-  -webkit-mask-image: linear-gradient(
+  mask-image: linear-gradient(
     to top left,
     transparent 12%,
     rgb(78, 78, 78) 35%,
@@ -35,79 +34,80 @@ const GradientAvatar = styled.div`
 `;
 
 const WordsRey = styled.div`
-  position: absolute;
-  color: ${({ theme }) => theme.secundario};
-  font-family: ${({ theme }) => theme.fontMediumItalic};
-  font-weight: ${({ theme }) => theme.weightMediumItalic};
-  font-style: ${({ theme }) => theme.styleMediumItalic};
-  padding: 3px 3px 3px 200px;
-  z-index: 16;
-  letter-spacing: 10px;
-  display: flex;
-  flex-direction: column-reverse;
-  text-align: end;
-
-  @media ${devices.mobileS} {
-    font-size: 10px;
-    letter-spacing: 5px;
-    right: 290px;
-    top: 200px;
-  }
-
-  @media ${devices.mobileM} {
-    right: 320px;
-  }
-
-  @media ${devices.mobileL} {
-    right: 340px;
-  }
-
-  @media ${devices.mobileXL} {
-    right: 330px;
-  }
-
-  @media ${devices.tablet} {
-    font-size: 16px;
+    text-transform: uppercase;
+    position: absolute;
+    color: ${({theme}) => theme.secundario};
+    font-family: ${({theme}) => theme.fontMediumItalic};
+    font-weight: ${({theme}) => theme.weightMediumItalic};
+    font-style: ${({theme}) => theme.styleMediumItalic};
+    padding: 3px 3px 3px 200px;
+    z-index: 16;
     letter-spacing: 10px;
-    right: 75%;
-    top: 58%;
-  }
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: end;
 
-  &::before {
-    order: 1;
-    right: 45px;
-    position: relative;
-    content: "REY";
-    padding: inherit;
-    z-index: 12;
-    background-color: ${(props) => props.theme.primario};
-    right: 0px;
+    @media ${devices.mobileS} {
+        font-size: 10px;
+        letter-spacing: 5px;
+        right: 290px;
+        top: 200px;
     }
 
-  &::after {
-    position: relative;
-    content: "GUERRERO";
-    padding: inherit;
-    background-color: ${(props) => props.theme.primario};
-    right: -64px;
-  }
+    @media ${devices.mobileM} {
+        right: 320px;
+    }
+
+    @media ${devices.mobileL} {
+        right: 340px;
+    }
+
+    @media ${devices.mobileXL} {
+        right: 330px;
+    }
+
+    @media ${devices.tablet} {
+        font-size: 16px;
+        letter-spacing: 10px;
+        right: 75%;
+        top: 58%;
+    }
+
+    &::before {
+        order: 1;
+        position: relative;
+        content: "Goals";
+        padding: inherit;
+        z-index: 12;
+        background-color: ${(props) => props.theme.primario};
+        right: 0px;
+    }
+
+    &::after {
+        position: relative;
+        content: "Objectives";
+        padding: inherit;
+        background-color: ${(props) => props.theme.primario};
+        right: -64px;
+    }
 `;
 
 const WordsAmante = styled(WordsRey)`
-  right: -35px;
-  top: 60px;
+    right: -35px;
+    top: 60px;
+    text-transform: uppercase;
 
-  &::before {
-    content: "MAGO";
-  }
+    &::before {
+        content: "Growth";
+    }
 
-  &::after {
-    content: "AMANTE";
-  }
+    &::after {
+        content: "Self-efficacy";
+    }
 
-  @media ${devices.tablet} {
-    top: 83px;
-  }
+    @media ${devices.tablet} {
+        top: 83px;
+    }
 
 `;
 

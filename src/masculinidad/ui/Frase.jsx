@@ -4,8 +4,8 @@ import styled, { css } from "styled-components";
 import { devices } from "../../styles/valores";
 
 const phrases = [
-  "Recursos sobre masculinidad seleccionados cuidadosamente y recopilados en una sola web <div>Incluye recursos traducidos de otros idiomas al español</div>",
-  "'El secreto no es correr detrás de las mariposas, es cuidar el jardín para que ellas vengan hacia ti' <div>Mário Quintana</div>",
+  "'El que anda con sabios, sabio será; mas el que se junta con necios será quebrantado.' <div>Rey Salomón</div>",
+  "Recursos de Desarrollo Personal seleccionados cuidadosamente y recopilados en una sola web"
 ];
 
 const Phrase = styled.div`

@@ -99,7 +99,7 @@ export const Logo2 = () => {
       <Circle />
       <Circle2 />
       <LineTwo />
-      <TitleLogo>RECURSOS PARA LA EXELENCIA MASCULINA</TitleLogo>
+      <TitleLogo>RECURSOS DE DESARROLLO DE PERSONAJE</TitleLogo>
       <TaperLineTwo />
     </>
   );

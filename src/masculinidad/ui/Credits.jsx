@@ -51,7 +51,7 @@ export const Credits = () => {
           <Img src={Twitter} alt="Twitter" />
         </Link>
       </ContainerSocialMedia>
-      <Letras>© 2023 | Por JuNRod con mucho <Img src={Love} /> </Letras>
+      <Letras>2023 | JuNRod</Letras>
     </CreditsContainer>
   );
 };

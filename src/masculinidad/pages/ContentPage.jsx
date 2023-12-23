@@ -10,7 +10,6 @@ import { useEffect } from "react";
 import { Sponsors } from "../components/Sponsors";
 import { Authors, Button, ButtonLink, Card, CardContainer, CardDescription, CardImagen, CardImg, CardTitle, ContainerFrontPage, Contenedor, ContenedorPlacas, ContentView, ContentViewDescription, Description, FlexColumnInPhone, GridBooks, Img, MessageDataSliceEmpty, NavLinkDeleteStyles, Pagination, Placa, ScrollTop, VerMas, Title } from "../../styles/ContentPageStyles";
 
-
 export const ContentPage = () => {
   const dispatch = useDispatch();
 

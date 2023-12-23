@@ -33,20 +33,6 @@ export const SectionsRight = () => {
     dispatch(setScroll("aportar"));
   };
 
-  // const handleSponsorClick = () => {
-  //   // dispatch(setSponsor(!sponsor))
-
-  //   redirectToEmail();
-  // };
-
-  const redirectToEmail = () => {
-    // var emailAddress = 'junrodpro@gmail.com';
-    // var subject = 'Quiero patrocinar Masculinidad';
-    // var body = 'Quiero patrocinar Masculinidad';
-    // var mailtoLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    // window.open(mailtoLink, "_blank")
-  };
-
   return (
     <ContainerSectionLeft>
       <NavLink
@@ -61,19 +47,6 @@ export const SectionsRight = () => {
         Aportar
       </Link>
 
-      <a
-        id="tooltip"
-        data-tooltip-delay-hide={5000}
-        disabled
-        style={{
-          opacity: "50%",
-          cursor: "pointer",
-        }}
-        // className={`${sponsor ? "on" : "off"}`}
-        // onClick={handleSponsorClick}
-      >
-        Patrocinarnos
-      </a>
     </ContainerSectionLeft>
   );
 };

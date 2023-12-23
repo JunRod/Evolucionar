@@ -11,15 +11,13 @@ import { ContainerSectionLeft } from "../../styles/SectionLeftStyles";
 const sections = [
   "libros",
   "youtube",
-  "twitter",
-  "tiktok",
   "telegram",
   "aplicaciones",
 ];
 
 export const SectionsLeft = () => {
   const dispatch = useDispatch();
-  const { data, sponsor } = useSelector((state) => state.masculinidad);
+  const { data } = useSelector((state) => state.masculinidad);
 
   const onClickSection = (section) => {
     dispatch(setDataVisualization({}));
@@ -46,5 +44,3 @@ export const SectionsLeft = () => {
     </ContainerSectionLeft>
   );
 };
-
-// className={({ isActive }) => `${sponsor? "off" : isActive ? "on" : "off"}`}
