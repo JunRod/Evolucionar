@@ -1,17 +1,16 @@
-# [Masculinidad](https://masculinidad.vercel.app/)
+# [Evolucionar (Click para probar) ](https://masculinidad.vercel.app/)
 
-![Imagen del Proyecto](/public/images/M.svg)
-La tecnología ha aumentado las virtudes y los vicios de los seres humanos; Los vicios ahora son transitables y transmitibles socialmente, Masculinidad es una web con contenido resaltante y filtrado que ha ayudado a muchos hombre a salir de estos vicios, los temas que contiene son:
-- NoFap
+![Imagen del Proyecto](https://res.cloudinary.com/dabwdkdys/image/upload/v1703371748/Frame_6GraphLogo_xvfjtz.svg)
+
+En nuestra plataforma en línea, abordamos temas importantes que afectan a las personas todos los días, como cómo mejorar uno mismo, construir relaciones saludables y mantener un bienestar general. No importa quién seas, te ofrecemos contenido valioso y fácil de entender en áreas como:
+
 - Desarrollo Personal
 - Relaciones
-- Masculinidad
-- Naturaleza Femenina
-
-No busques más! Encuentralo todo en una web.
+- Bienestar
+-  NoFap
 
 ## Tecnologías
-- React
+- sReact
 - React Router
 - Style Components
 - React dropzone
