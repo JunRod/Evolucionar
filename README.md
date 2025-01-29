@@ -6,8 +6,7 @@
 
 ## [UI en Figma](https://www.figma.com/file/zUIUfjoWRbwQ7P1d0C4W23/Masculinidad?type=design&t=N8pgZwpoSTB7MWwE-6)
 
-
-En nuestra plataforma en línea, abordamos temas importantes que afectan a las personas todos los días, como cómo mejorar uno mismo, construir relaciones saludables y mantener un bienestar general. No importa quién seas, te ofrecemos contenido valioso y fácil de entender en áreas como:
+Plataforma con contenido filtrado en temas de desarrollo personal para ayudar a los hombres a superar vicios y mejorar su calidad de vida. En tan solo dos semanas, ha logrado atraer a más de 250 visitantes. Desarrollado con React, React Router, Style Components y Redux.
 
 - Desarrollo Personal
 - Relaciones
