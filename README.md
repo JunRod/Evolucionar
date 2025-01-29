@@ -11,22 +11,11 @@ En nuestra plataforma en línea, abordamos temas importantes que afectan a las p
 
 - Desarrollo Personal
 - Relaciones
-- Bienestar
--  NoFap
+- NoFap
 
 ## Tecnologías
-- sReact
-- React Router
-- Style Components
-- React dropzone
-- React burger menu
-- React slick
-- React tooltip
-- React Redux
-- Sonner
+- React
 
 
 ## Analíticas Web
 ![image](https://github.com/JunRod/Masculinidad/assets/87834204/a2b40ea1-48f7-474d-9ca4-c95868131f8c)
-
-Si visitaste la web, muchas gracias <3
